@@ -53,7 +53,7 @@ Obsidian-Vault „Studium“ (Pfad in `CLAUDE.local.md`):
 
 ## Nächste Schritte
 1. Supabase-Projekt anlegen, `schema.sql` ausführen, Konten anlegen, `js/config.js` füllen.
-2. GitHub-Repository anlegen, Pages aktivieren (Branch `main`, Ordner `/`).
+2. ~~GitHub-Repository anlegen, Pages aktivieren~~ erledigt: github.com/ItzIven/paragraf, https://itziven.github.io/paragraf/ (Branch `main`, `/`).
 3. Inhalte Fach für Fach erstellen (Start: AO Stufe 1 und Hauptstudiums-Blöcke AO-11 bis AO-15), validieren, hochladen.
 4. Ausbau: Falltrainer (mehrstufige Fälle), Fristenrechner-Training, Lernplan mit Prüfungsterminen.
 
@@ -67,3 +67,6 @@ Obsidian-Vault „Studium“ (Pfad in `CLAUDE.local.md`):
 - `inhalte/ust.json`: 36 Karten, 14 Fragen, 5 Schemata.
 - Rechtsstand prüfen: Die amtlichen Handbücher liegen NICHT im Vault (nur Skripte/Übungen). Normen gegen gesetze-im-internet.de prüfen, Skripte über `_Text/` im Vault. Keine Corona-Sonderregeln aufnehmen (Entscheidung 27.11.2026).
 - Geänderte Rechtslage beachten: § 19 UStG ab 2025 (25.000/100.000 €, steuerfrei, Gründungsjahr 25.000 €), § 44 Abs. 3 UStDV 6.000 €, § 152 Abs. 5 S. 2 AO (25 € bei Jahreserklärungen), § 122 Abs. 2 Nr. 1 AO Vier-Tages-Fiktion ab 2025.
+
+- `inhalte/est.json`: 28 Karten, 13 Fragen, 4 Schemata (VZ 2026: Grundfreibetrag 12.348 €, Entfernungspauschale 0,38 € ab km 1, § 33a 12.348 €, Besteuerungsanteil 2026 84 %, § 23 Freigrenze < 1.000 €, § 9 Nr. 1 GewStG 0,11 % Grundsteuerwert ab EZ 2025).
+- Deployment: Repo-Klon unter /home/claude/paragraf; Inhalte (`inhalte/`) nie committen.
