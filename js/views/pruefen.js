@@ -1,5 +1,5 @@
 import { progress, commit } from '../store.js';
-import { questionsFor, blockById, fachName } from '../content.js';
+import { db, questionsFor, blockById, fachName } from '../content.js';
 import { CONFIG } from '../config.js';
 import { esc, rich, shuffle, pct, toast } from '../ui.js';
 
@@ -7,6 +7,7 @@ import { esc, rich, shuffle, pct, toast } from '../ui.js';
 const cfg = { mode: 'training', n: 10, faecher: null, art: 'alle' };
 
 export function render(view, [kind, arg]) {
+  if (kind === 'runde') return runde(view, Number(arg));
   if (kind === 'block') return run(view, { mode: 'training', pool: weighted(questionsFor({ block: arg })), title: `${arg} ${blockById(arg)?.titel || ''}` });
   cfg.faecher ||= [...progress.settings.faecher];
   const ARTEN = { alle: 'Alle', fall: 'Nur Fälle', rechnen: 'Nur Rechnen' };
@@ -58,10 +59,55 @@ const SCALE = [[96, 15], [91, 14], [87, 13], [82, 12], [78, 11], [73, 10], [68, 
 const notenpunkte = (p) => SCALE.find(([min]) => p >= min)[1];
 const pts = (q) => q.punkte ?? q.niveau ?? 2;
 
+const fmtDate = (t) => new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+const resultText = (e) => (e.max ? `${pct(e.got, e.max)} % · ${e.np} NP` : `${pct(e.right, e.n)} %`);
+
 function history() {
-  const ex = progress.exams.slice(-5).reverse();
+  const ex = progress.exams.slice(-10).reverse();
   if (!ex.length) return '';
-  return `<h2>Bisherige Runden</h2><table class="table"><tr><th>Datum</th><th>Modus</th><th>Ergebnis</th></tr>${ex.map((e) => `<tr><td>${new Date(e.t).toLocaleDateString('de-DE')}</td><td>${e.mode === 'klausur' ? 'Klausur' : 'Training'}</td><td>${e.max ? `${pct(e.got, e.max)} % · ${e.np} NP` : `${pct(e.right, e.n)} %`}</td></tr>`).join('')}</table>`;
+  return `<h2>Bisherige Runden</h2><table class="table"><tr><th>Datum</th><th>Modus</th><th>Ergebnis</th><th></th></tr>${ex.map((e) => `<tr><td>${fmtDate(e.t)}</td><td>${e.mode === 'klausur' ? 'Klausur' : 'Training'}</td><td>${resultText(e)}</td><td>${e.items ? `<a href="#/pruefen/runde/${e.t}">Ansehen</a>` : ''}</td></tr>`).join('')}</table>`;
+}
+
+// Rückblick auf eine Runde: jede Frage mit eigener und richtiger Antwort
+function runde(view, t, filter = 'alle') {
+  const e = progress.exams.find((x) => x.t === t);
+  if (!e?.items) { view.innerHTML = '<div class="empty">Für diese Runde sind keine Einzelheiten gespeichert. <a href="#/pruefen">Zurück</a></div>'; return; }
+  const byId = new Map(db.questions.map((q) => [q.id, q]));
+  const items = e.items.map((it) => ({ ...it, q: byId.get(it.id) }));
+  const wrong = items.filter((it) => !it.ok && it.q);
+  const shown = items.filter((it) => filter === 'alle' || (filter === 'falsch' ? !it.ok : it.ok));
+  const answerText = (q, m) => {
+    if (q.typ === 'rechnen') return m === '' || m == null ? '–' : `${m}${q.einheit ? ' ' + q.einheit : ''}`;
+    const sel = (m || []).map((i) => q.optionen[i]).filter(Boolean);
+    return sel.length ? sel.map((o) => esc(o.text)).join('; ') : '– (keine Antwort)';
+  };
+  const rightText = (q) => (q.typ === 'rechnen' ? `${Number(q.loesung).toLocaleString('de-DE')}${q.einheit ? ' ' + q.einheit : ''}` : q.optionen.filter((o) => o.richtig).map((o) => esc(o.text)).join('; '));
+  const whyText = (q, m) => (q.typ === 'rechnen' ? [] : (m || []).map((i) => q.optionen[i]).filter((o) => o && !o.richtig && o.warum).map((o) => `<li><b>${esc(o.text)}:</b> ${esc(o.warum)}</li>`));
+  const sv = (q) => {
+    const first = q.fall ? db.questions.find((x) => x.fall === q.fall && x.schritt === 1) : null;
+    return `${first?.fallSachverhalt ? `<details class="fall-sv"><summary>Sachverhalt des Falls</summary><div class="small">${rich(first.fallSachverhalt)}</div></details>` : ''}${q.sachverhalt ? `<div class="small">${rich(q.sachverhalt)}</div>` : ''}`;
+  };
+  view.innerHTML = `
+    <div class="head"><div><h1>${e.mode === 'klausur' ? 'Klausurrunde' : 'Trainingsrunde'}</h1><div class="sub">${fmtDate(e.t)} · ${resultText(e)} · ${e.right} von ${e.n} richtig</div></div></div>
+    <div class="chips">${[['alle', `Alle (${items.length})`], ['falsch', `Falsch (${items.filter((i) => !i.ok).length})`], ['richtig', `Richtig (${items.filter((i) => i.ok).length})`]].map(([k, l]) => `<button class="chip" data-f="${k}" aria-pressed="${filter === k}">${l}</button>`).join('')}</div>
+    <div class="stack" style="margin-top:12px">${shown.map((it) => {
+      const q = it.q;
+      if (!q) return `<div class="panel small muted">${it.ok ? '✓' : '✗'} Frage ${esc(it.id)} ist in den geladenen Inhalten nicht mehr vorhanden.</div>`;
+      const why = whyText(q, it.m);
+      return `<details class="panel review ${it.ok ? 'ok' : 'bad'}"><summary><span class="mark">${it.ok ? '✓' : '✗'}</span><span>${esc(q.frage)}</span><span class="small muted">${esc(q.block || q.fach)}${q.fall ? ` · Fall, Schritt ${q.schritt}` : ''}</span></summary>
+        <div class="stack small" style="margin-top:10px">${sv(q)}
+          <div><b>Deine Antwort:</b> ${answerText(q, it.m)}</div>
+          ${it.ok ? '' : `<div><b>Richtig:</b> ${rightText(q)}</div>`}
+          ${why.length ? `<ul class="why-list">${why.join('')}</ul>` : ''}
+          ${q.erklaerung ? `<div>${rich(q.erklaerung)}</div>` : ''}
+          ${q.norm ? `<div class="muted">${esc(q.norm)}</div>` : ''}
+        </div></details>`; }).join('') || '<div class="empty">Keine Fragen in dieser Auswahl.</div>'}</div>
+    <div class="btn-row" style="margin-top:16px">${wrong.length ? '<button class="btn btn--primary" id="redo">Falsche Fragen üben</button>' : ''}<a class="btn" href="#/pruefen">Zurück</a></div>`;
+  view.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => runde(view, t, b.dataset.f));
+  view.querySelector('#redo')?.addEventListener('click', () => {
+    const ids = new Set(wrong.map((w) => w.q.fall || w.q.id));
+    run(view, { mode: 'training', pool: db.questions.filter((q) => ids.has(q.fall || q.id)).sort((a, b) => (a.fall || a.id).localeCompare(b.fall || b.id) || (a.schritt || 0) - (b.schritt || 0)), title: 'Falsche Fragen' });
+  });
 }
 
 function run(view, { mode, pool, title }) {
@@ -120,7 +166,7 @@ function run(view, { mode, pool, title }) {
   };
   const record = (q) => {
     const ok = isRight(q, picked);
-    answers.push({ q, ok });
+    answers.push({ q, ok, mine: q.typ === 'rechnen' ? typed.trim() : [...picked].sort((a, b) => a - b) });
     const a = progress.answers[q.id] || { ok: [] };
     a.ok = [...a.ok, ok].slice(-5); a.t = Date.now();
     progress.answers[q.id] = a;
@@ -132,7 +178,7 @@ function run(view, { mode, pool, title }) {
     const el = view.querySelector('#timer');
     if (!el) return;
     el.textContent = `${Math.floor(left / 60000)}:${String(Math.floor(left / 1000) % 60).padStart(2, '0')}`;
-    if (left <= 0) { toast('Zeit abgelaufen'); while (answers.length < qs.length) { const q = qs[answers.length]; picked = answers.length === i ? picked : new Set(); record(q); } i = qs.length; return finish(); }
+    if (left <= 0) { toast('Zeit abgelaufen'); while (answers.length < qs.length) { const q = qs[answers.length]; if (answers.length !== i) { picked = new Set(); typed = ''; } record(q); } i = qs.length; return finish(); }
     timer = setTimeout(tick, 1000);
   };
   const finish = () => {
@@ -144,7 +190,7 @@ function run(view, { mode, pool, title }) {
     const np = notenpunkte(pp);
     const perBlock = {};
     answers.forEach(({ q, ok }) => { const k = q.block || q.fach; perBlock[k] ||= [0, 0]; perBlock[k][1]++; if (ok) perBlock[k][0]++; });
-    progress.exams.push({ t: Date.now(), mode, faecher: [...new Set(answers.map((a) => a.q.fach))], n: answers.length, right, got, max, np, perBlock });
+    progress.exams.push({ t: Date.now(), mode, faecher: [...new Set(answers.map((a) => a.q.fach))], n: answers.length, right, got, max, np, perBlock, items: answers.map((a) => ({ id: a.q.id, ok: a.ok, m: a.mine })) });
     commit();
     const p = pct(right, answers.length);
     view.innerHTML = `
@@ -157,7 +203,7 @@ function run(view, { mode, pool, title }) {
       <h2>Nach Lernblock</h2>
       <table class="table"><tr><th>Block</th><th>Richtig</th></tr>${Object.entries(perBlock).map(([b, [r, n]]) => `<tr><td><a href="#/bloecke/${b}">${esc(b)}</a> ${esc(blockById(b)?.titel || fachName(b))}</td><td>${r}/${n}</td></tr>`).join('')}</table>
       ${mode === 'klausur' ? `<h2>Lösungen</h2>${answers.map(({ q, ok }) => `<details class="panel" style="margin-bottom:8px"><summary>${ok ? '✓' : '✗'} ${esc(q.frage)}</summary><div class="small" style="margin-top:8px"><b>Richtig:</b> ${q.typ === 'rechnen' ? fmt(q) : q.optionen.filter((o) => o.richtig).map((o) => esc(o.text)).join('; ')}</div>${q.erklaerung ? `<div class="small">${rich(q.erklaerung)}</div>` : ''}${q.norm ? `<div class="small muted">${esc(q.norm)}</div>` : ''}</details>`).join('')}` : ''}
-      <div class="btn-row" style="margin-top:16px"><a class="btn btn--primary" href="#/pruefen">Neue Runde</a><a class="btn" href="#/karten/faellig">Karten lernen</a></div>`;
+      <div class="btn-row" style="margin-top:16px"><a class="btn btn--primary" href="#/pruefen">Neue Runde</a><a class="btn" href="#/pruefen/runde/${progress.exams.at(-1).t}">Runde im Detail</a><a class="btn" href="#/karten/faellig">Karten lernen</a></div>`;
   };
   draw();
 }

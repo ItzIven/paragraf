@@ -284,3 +284,12 @@ textarea.input { padding: 10px 12px; min-height: 120px; resize: vertical; }
 .fall-sv summary{cursor:pointer;font-weight:600}
 .fall-sv[open] summary{margin-bottom:6px}
 .result-row{display:flex;gap:32px;flex-wrap:wrap}
+
+/* Rückblick auf Runden */
+.review summary{display:grid;grid-template-columns:1.4rem 1fr;gap:4px 8px;cursor:pointer;list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary .small{grid-column:2}
+.review .mark{font-weight:700}
+.review.ok .mark{color:var(--ok)} .review.bad .mark{color:var(--bad)}
+.review.bad{border-left:3px solid var(--bad)} .review.ok{border-left:3px solid var(--ok)}
+.why-list{margin:0;padding-left:1.1rem}

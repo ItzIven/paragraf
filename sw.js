@@ -1,6 +1,6 @@
 // Service Worker: App-Hülle offline verfügbar machen.
 // Bei jeder Veröffentlichung VERSION erhöhen, damit Geräte das Update laden.
-const VERSION = 'paragraf-0.3.2';
+const VERSION = 'paragraf-0.3.3';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/app.js', 'js/config.js', 'js/store.js', 'js/srs.js', 'js/content.js', 'js/ui.js', 'js/supabase.js',
