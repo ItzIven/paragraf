@@ -48,6 +48,12 @@ create policy "Inhalte ändern (Admin)" on public.content
   using (exists (select 1 from public.admins a where a.user_id = (select auth.uid())))
   with check (exists (select 1 from public.admins a where a.user_id = (select auth.uid())));
 
+-- Zugriff über die Data API freigeben (neue Projekte geben Tabellen nicht mehr automatisch frei;
+-- welche Zeilen erlaubt sind, regeln die RLS-Richtlinien oben)
+grant select, insert, update on public.progress to authenticated;
+grant select, insert, update on public.content  to authenticated;
+grant select on public.admins to authenticated;
+
 -- Nach dem Anlegen deines Kontos einmal ausführen (E-Mail anpassen):
 -- insert into public.admins (user_id) select id from auth.users where email = 'deine@mail.de';
 
