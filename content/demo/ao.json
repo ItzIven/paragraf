@@ -1,0 +1,437 @@
+{
+ "fach": "AO",
+ "version": "demo-1",
+ "demo": true,
+ "hinweis": "Demo-Inhalte zum Ausprobieren, von Claude erstellt (Rechtsstand AO 2025/2026). Vor dem Lernen mit Skript und Gesetz abgleichen.",
+ "cards": [
+  {
+   "id": "ao-c-001",
+   "block": "AO-05",
+   "front": "Wann gilt ein Verwaltungsakt als bekannt gegeben, der im Inland mit einfachem Brief übermittelt wird?",
+   "back": "Am **vierten Tag** nach der Aufgabe zur Post, außer er ist nicht oder später zugegangen (Beweislast für Zugang und Zeitpunkt: Behörde).\nFür VA, die nach dem 31.12.2024 zur Post gegeben werden; vorher galt die Drei-Tages-Fiktion.",
+   "norm": "§ 122 Abs. 2 Nr. 1 AO"
+  },
+  {
+   "id": "ao-c-002",
+   "block": "AO-05",
+   "front": "Fristende fällt auf einen Samstag, Sonntag oder gesetzlichen Feiertag. Folge?",
+   "back": "Die Frist endet mit Ablauf des **nächstfolgenden Werktags**.",
+   "norm": "§ 108 Abs. 3 AO"
+  },
+  {
+   "id": "ao-c-003",
+   "block": "AO-05",
+   "front": "Wie lange ist die Einspruchsfrist und wann beginnt sie?",
+   "back": "**Ein Monat** nach Bekanntgabe des Verwaltungsakts. Berechnung nach § 108 Abs. 1 AO i. V. m. §§ 187 Abs. 1, 188 Abs. 2 BGB.\nBei fehlender oder unrichtiger Rechtsbehelfsbelehrung: Jahresfrist nach § 356 Abs. 2 AO.",
+   "norm": "§ 355 Abs. 1 S. 1 AO"
+  },
+  {
+   "id": "ao-c-004",
+   "block": "AO-05",
+   "front": "Wiedereinsetzung in den vorigen Stand: Antragsfrist und Ausschlussfrist?",
+   "back": "Antrag **innerhalb eines Monats** nach Wegfall des Hindernisses; versäumte Handlung innerhalb der Antragsfrist nachholen.\nNach **einem Jahr** seit Ende der versäumten Frist grundsätzlich ausgeschlossen (Ausnahme: höhere Gewalt).",
+   "norm": "§ 110 Abs. 2, 3 AO"
+  },
+  {
+   "id": "ao-c-005",
+   "block": "AO-07",
+   "front": "Regelmäßige Festsetzungsfrist für Steuern (ohne Zölle und Verbrauchsteuern)?",
+   "back": "**Vier Jahre.** Bei Steuerhinterziehung zehn Jahre, bei leichtfertiger Steuerverkürzung fünf Jahre.",
+   "norm": "§ 169 Abs. 2 S. 1 Nr. 2, S. 2 AO"
+  },
+  {
+   "id": "ao-c-006",
+   "block": "AO-07",
+   "front": "Anlaufhemmung bei Pflicht zur Abgabe einer Steuererklärung: wann beginnt die Festsetzungsfrist?",
+   "back": "Mit Ablauf des Kalenderjahres, in dem die Erklärung eingereicht wird, **spätestens** mit Ablauf des dritten Kalenderjahres, das auf die Entstehung der Steuer folgt.",
+   "norm": "§ 170 Abs. 2 S. 1 Nr. 1 AO"
+  },
+  {
+   "id": "ao-c-007",
+   "block": "AO-07",
+   "front": "Wie wirkt ein zulässiger Einspruch auf die Festsetzungsfrist?",
+   "back": "Ablaufhemmung: Die Frist läuft nicht ab, bevor über den Einspruch **unanfechtbar entschieden** ist.",
+   "norm": "§ 171 Abs. 3a S. 1 AO"
+  },
+  {
+   "id": "ao-c-008",
+   "block": "AO-08",
+   "front": "Steuerfestsetzung unter Vorbehalt der Nachprüfung: Wie weit reicht die Änderungsbefugnis, und wann entfällt der Vorbehalt?",
+   "back": "Änderung oder Aufhebung **jederzeit und in vollem Umfang**, solange der Vorbehalt wirksam ist.\nDer Vorbehalt entfällt mit **Ablauf der Festsetzungsfrist** (§ 164 Abs. 4 AO).",
+   "norm": "§ 164 Abs. 2 S. 1 AO"
+  },
+  {
+   "id": "ao-c-009",
+   "block": "AO-08",
+   "front": "Korrektur wegen neuer Tatsachen zugunsten des Steuerpflichtigen: welche zusätzliche Voraussetzung?",
+   "back": "Den Steuerpflichtigen darf **kein grobes Verschulden** daran treffen, dass die Tatsachen erst nachträglich bekannt werden.\nAusnahme: unmittelbarer oder mittelbarer Zusammenhang mit Tatsachen nach Nr. 1 (§ 173 Abs. 1 Nr. 2 S. 2 AO).",
+   "norm": "§ 173 Abs. 1 Nr. 2 S. 1 AO"
+  },
+  {
+   "id": "ao-c-010",
+   "block": "AO-08",
+   "front": "Was fällt unter § 129 AO und welche Ablaufhemmung gilt?",
+   "back": "**Schreibfehler, Rechenfehler und ähnliche offenbare Unrichtigkeiten**, die beim Erlass des VA unterlaufen sind (mechanische Fehler, kein Rechtsirrtum).\nAblaufhemmung: Festsetzungsfrist endet insoweit nicht vor Ablauf **eines Jahres** nach Bekanntgabe des Bescheids (§ 171 Abs. 2 S. 1 AO).",
+   "norm": "§ 129 S. 1 AO"
+  },
+  {
+   "id": "ao-c-011",
+   "block": "AO-08",
+   "front": "Schlichte Änderung zugunsten des Steuerpflichtigen: bis wann muss der Antrag gestellt werden?",
+   "back": "Der Antrag zugunsten muss **vor Ablauf der Einspruchsfrist** gestellt sein. Zuungunsten genügt Zustimmung des Steuerpflichtigen.",
+   "norm": "§ 172 Abs. 1 S. 1 Nr. 2 Buchst. a AO"
+  },
+  {
+   "id": "ao-c-012",
+   "block": "AO-09",
+   "front": "Darf das Finanzamt im Einspruchsverfahren verbösern?",
+   "back": "Ja, der VA kann auch **zum Nachteil** des Einspruchsführers geändert werden, wenn dieser zuvor auf die Möglichkeit hingewiesen und ihm Gelegenheit zur Äußerung gegeben wurde (Rücknahme des Einspruchs bleibt möglich).",
+   "norm": "§ 367 Abs. 2 S. 2 AO"
+  },
+  {
+   "id": "ao-c-013",
+   "block": "AO-03",
+   "front": "Nenne zwei Offenbarungsbefugnisse aus § 30 Abs. 4 AO.",
+   "back": "- Nr. 1: Durchführung eines Verfahrens nach Abs. 2 Nr. 1 Buchst. a und b (insb. Besteuerungsverfahren)\n- Nr. 2: ausdrücklich durch Gesetz zugelassen\n- Nr. 3: Zustimmung der betroffenen Person\n- Nr. 4, 5: Strafverfahren bzw. zwingendes öffentliches Interesse (eng)",
+   "norm": "§ 30 Abs. 4 AO"
+  },
+  {
+   "id": "ao-c-014",
+   "block": "AO-02",
+   "front": "Höhe des Verspätungszuschlags bei Jahreserklärungen (z. B. ESt)?",
+   "back": "Für jeden angefangenen Monat der Verspätung **0,25 %** der festgesetzten Steuer, vermindert um die festgesetzten Vorauszahlungen und anzurechnenden Steuerabzugsbeträge, **mindestens 25 €** je angefangenen Monat.\nNur bei anderen Erklärungen (z. B. Voranmeldungen) gilt S. 1: 0,25 % der festgesetzten Steuer, mindestens 10 €.\nAuf volle Euro abrunden, höchstens 25.000 € (§ 152 Abs. 10 AO).",
+   "norm": "§ 152 Abs. 5 S. 1, 2, Abs. 10 AO"
+  },
+  {
+   "id": "ao-c-015",
+   "block": "AO-12",
+   "front": "Haftung der Vertreter: Welcher Verschuldensgrad ist erforderlich?",
+   "back": "**Vorsatz oder grobe Fahrlässigkeit** bei der Verletzung der Pflichten aus §§ 34, 35 AO; Haftung, soweit Ansprüche dadurch nicht oder nicht rechtzeitig festgesetzt oder erfüllt werden.",
+   "norm": "§ 69 S. 1 AO"
+  },
+  {
+   "id": "ao-c-016",
+   "block": "AO-12",
+   "front": "Wann darf der Haftungsschuldner auf Zahlung in Anspruch genommen werden?",
+   "back": "Grundsätzlich erst, wenn die Vollstreckung in das bewegliche Vermögen des Steuerschuldners **erfolglos** war oder aussichtslos ist (Subsidiarität).\nAusnahme (S. 2): Haftung wegen Steuerhinterziehung/-hehlerei oder Pflicht zum Einbehalt und zur Abführung von Steuern (z. B. Lohnsteuer).",
+   "norm": "§ 219 AO"
+  }
+ ],
+ "questions": [
+  {
+   "id": "ao-q-001",
+   "block": "AO-05",
+   "niveau": 2,
+   "sachverhalt": "Das Finanzamt gibt den Einkommensteuerbescheid am Donnerstag, 2.10.2025, im Inland als einfachen Brief zur Post. Er geht tatsächlich am 4.10.2025 zu.",
+   "frage": "Wann gilt der Bescheid als bekannt gegeben?",
+   "optionen": [
+    {
+     "text": "Montag, 6.10.2025",
+     "richtig": true
+    },
+    {
+     "text": "Sonntag, 5.10.2025",
+     "warum": "Drei-Tages-Fiktion: gilt nur für VA, die bis 31.12.2024 zur Post gegeben wurden."
+    },
+    {
+     "text": "Samstag, 4.10.2025",
+     "warum": "Der frühere tatsächliche Zugang verkürzt die Fiktion nicht."
+    },
+    {
+     "text": "Dienstag, 7.10.2025",
+     "warum": "Der Feiertag am 3.10. verlängert die Vier-Tages-Fiktion nicht; maßgeblich ist nur, ob das Fristende selbst auf einen Sa/So/Feiertag fällt."
+    }
+   ],
+   "norm": "§ 122 Abs. 2 Nr. 1 AO",
+   "erklaerung": "Vier-Tages-Fiktion: 2.10. + 4 Tage = Montag, 6.10.2025. Ein früherer Zugang ist unbeachtlich; nur ein späterer Zugang verschiebt den Zeitpunkt."
+  },
+  {
+   "id": "ao-q-002",
+   "block": "AO-05",
+   "niveau": 2,
+   "sachverhalt": "Ein Bescheid gilt als am Montag, 6.10.2025, bekannt gegeben. Die Rechtsbehelfsbelehrung ist ordnungsgemäß.",
+   "frage": "Mit Ablauf welchen Tages endet die Einspruchsfrist?",
+   "optionen": [
+    {
+     "text": "Donnerstag, 6.11.2025",
+     "richtig": true
+    },
+    {
+     "text": "Mittwoch, 5.11.2025",
+     "warum": "Ereignisfrist: Der Tag der Bekanntgabe wird nicht mitgerechnet (§ 187 Abs. 1 BGB), Ende ist der Tag mit gleicher Zahl (§ 188 Abs. 2 BGB)."
+    },
+    {
+     "text": "Freitag, 7.11.2025",
+     "warum": "Kein Werktags-Aufschub nötig, der 6.11. ist ein Donnerstag."
+    },
+    {
+     "text": "Montag, 6.10.2026",
+     "warum": "Die Jahresfrist des § 356 Abs. 2 AO gilt nur bei fehlender oder unrichtiger Belehrung."
+    }
+   ],
+   "norm": "§ 355 Abs. 1 S. 1, § 108 Abs. 1 AO i. V. m. §§ 187 Abs. 1, 188 Abs. 2 BGB",
+   "erklaerung": "Fristbeginn 7.10.2025 (0:00 Uhr), Fristende mit Ablauf des 6.11.2025. Donnerstag, daher keine Verschiebung nach § 108 Abs. 3 AO."
+  },
+  {
+   "id": "ao-q-003",
+   "block": "AO-07",
+   "niveau": 3,
+   "sachverhalt": "Die Einkommensteuer 2020 ist mit Ablauf des 31.12.2020 entstanden. Der Steuerpflichtige war zur Abgabe verpflichtet und reicht die Erklärung am 15.8.2022 ein. Keine Ablaufhemmung.",
+   "frage": "Wann endet die Festsetzungsfrist?",
+   "optionen": [
+    {
+     "text": "Mit Ablauf des 31.12.2026",
+     "richtig": true
+    },
+    {
+     "text": "Mit Ablauf des 31.12.2024",
+     "warum": "Anlaufhemmung übersehen: Frist beginnt nicht mit Ablauf 2020, sondern mit Ablauf des Abgabejahres."
+    },
+    {
+     "text": "Mit Ablauf des 31.12.2027",
+     "warum": "Die Höchstdauer der Anlaufhemmung (Ablauf 2023) greift nur, wenn bis dahin keine Erklärung eingereicht wird."
+    },
+    {
+     "text": "Mit Ablauf des 15.8.2026",
+     "warum": "Die Festsetzungsfrist läuft immer bis zum Ende eines Kalenderjahres."
+    }
+   ],
+   "norm": "§ 169 Abs. 2 S. 1 Nr. 2, § 170 Abs. 2 S. 1 Nr. 1 AO",
+   "erklaerung": "Beginn mit Ablauf 2022 (Jahr der Einreichung), Dauer vier Jahre: Ende mit Ablauf des 31.12.2026."
+  },
+  {
+   "id": "ao-q-004",
+   "block": "AO-08",
+   "niveau": 2,
+   "sachverhalt": "Ein ESt-Bescheid ohne Vorbehalt und ohne Vorläufigkeitsvermerk ist bestandskräftig. Bei einer Außenprüfung beim Arbeitgeber wird bekannt, dass der Steuerpflichtige verschwiegene Mieteinnahmen hatte.",
+   "frage": "Auf welche Vorschrift stützt sich die Änderung zuungunsten?",
+   "optionen": [
+    {
+     "text": "§ 173 Abs. 1 Nr. 1 AO",
+     "richtig": true
+    },
+    {
+     "text": "§ 164 Abs. 2 AO",
+     "warum": "Der Bescheid steht nicht unter Vorbehalt der Nachprüfung."
+    },
+    {
+     "text": "§ 129 AO",
+     "warum": "Keine offenbare Unrichtigkeit des Finanzamts beim Erlass, sondern eine unbekannte Tatsache."
+    },
+    {
+     "text": "§ 175 Abs. 1 S. 1 Nr. 2 AO",
+     "warum": "Kein rückwirkendes Ereignis: Die Einnahmen lagen bei Erlass bereits vor, sie waren nur unbekannt."
+    },
+    {
+     "text": "§ 172 Abs. 1 S. 1 Nr. 2 Buchst. a AO",
+     "warum": "Schlichte Änderung setzt Antrag oder Zustimmung des Steuerpflichtigen voraus."
+    }
+   ],
+   "norm": "§ 173 Abs. 1 Nr. 1 AO",
+   "erklaerung": "Nachträglich bekannt gewordene Tatsache, die zu einer höheren Steuer führt. Ein Verschulden des Finanzamts kann nur unter Treu und Glauben (Ermittlungspflichtverletzung bei voller Mitwirkung des Stpfl.) entgegenstehen; hier hat der Stpfl. die Einnahmen verschwiegen."
+  },
+  {
+   "id": "ao-q-005",
+   "block": "AO-09",
+   "niveau": 2,
+   "frage": "Welche der folgenden Punkte sind Zulässigkeitsvoraussetzungen eines Einspruchs?",
+   "optionen": [
+    {
+     "text": "Statthaftigkeit (Einspruch gegen einen VA in Abgabenangelegenheiten)",
+     "richtig": true,
+     "warum": "§ 347 Abs. 1 AO"
+    },
+    {
+     "text": "Einhaltung der Einspruchsfrist",
+     "richtig": true,
+     "warum": "§ 355 AO"
+    },
+    {
+     "text": "Beschwer des Einspruchsführers",
+     "richtig": true,
+     "warum": "§ 350 AO"
+    },
+    {
+     "text": "Eine schriftliche Begründung des Einspruchs",
+     "warum": "Nur Soll-Vorschrift (§ 357 Abs. 3 AO); das Fehlen macht den Einspruch nicht unzulässig."
+    },
+    {
+     "text": "Eigenhändige Unterschrift des Einspruchsführers",
+     "warum": "Es genügt, wenn erkennbar ist, wer den Einspruch eingelegt hat (§ 357 Abs. 1 S. 2 AO)."
+    }
+   ],
+   "norm": "§§ 347, 350, 355, 357 AO",
+   "erklaerung": "Weitere Zulässigkeitspunkte: Form (§ 357 Abs. 1 AO: schriftlich, elektronisch oder zur Niederschrift), richtige Anbringungsbehörde (§ 357 Abs. 2 AO), kein Verzicht und keine Rücknahme (§§ 354, 362 AO), Handlungsfähigkeit (§ 79 AO)."
+  },
+  {
+   "id": "ao-q-006",
+   "block": "AO-03",
+   "niveau": 2,
+   "frage": "In welchen Fällen erlaubt § 30 Abs. 4 AO eine Offenbarung geschützter Daten?",
+   "optionen": [
+    {
+     "text": "Die betroffene Person stimmt zu.",
+     "richtig": true,
+     "warum": "§ 30 Abs. 4 Nr. 3 AO"
+    },
+    {
+     "text": "Die Offenbarung ist durch Gesetz ausdrücklich zugelassen.",
+     "richtig": true,
+     "warum": "§ 30 Abs. 4 Nr. 2 AO"
+    },
+    {
+     "text": "Die Hausbank des Steuerpflichtigen fragt nach dessen Steuerschulden.",
+     "warum": "Kein Offenbarungstatbestand; Bankinteresse genügt nicht."
+    },
+    {
+     "text": "Ein Nachbar zeigt den Steuerpflichtigen an und will den Ausgang des Verfahrens erfahren.",
+     "warum": "Auch der Anzeigeerstatter hat keinen Anspruch; die Verhältnisse des Angezeigten bleiben geschützt."
+    }
+   ],
+   "norm": "§ 30 Abs. 4 AO",
+   "erklaerung": "Jede Weitergabe braucht eine konkrete Befugnis aus § 30 Abs. 4 oder 5 AO oder ein Spezialgesetz (§ 30 Abs. 4 Nr. 2 AO)."
+  },
+  {
+   "id": "ao-q-007",
+   "block": "AO-02",
+   "niveau": 3,
+   "sachverhalt": "Festgesetzte ESt 6.000 €, festgesetzte Vorauszahlungen 2.000 €, keine Steuerabzugsbeträge. Die Erklärung wurde drei angefangene Monate verspätet abgegeben; der Verspätungszuschlag ist festzusetzen.",
+   "frage": "Wie hoch ist der Verspätungszuschlag?",
+   "optionen": [
+    {
+     "text": "75 €",
+     "richtig": true
+    },
+    {
+     "text": "30 €",
+     "warum": "Der Mindestbetrag von 10 € gilt nach S. 1 nur für Erklärungen, die sich nicht auf ein Kalenderjahr beziehen. Für die ESt-Erklärung gilt S. 2: mindestens 25 € je Monat."
+    },
+    {
+     "text": "45 €",
+     "warum": "Bemessungsgrundlage ist die Steuer abzüglich Vorauszahlungen (4.000 €); außerdem greift der Mindestbetrag von 25 €."
+    },
+    {
+     "text": "25 €",
+     "warum": "Der Zuschlag entsteht für jeden angefangenen Monat."
+    }
+   ],
+   "norm": "§ 152 Abs. 5 S. 2 AO",
+   "erklaerung": "Jahreserklärung → § 152 Abs. 5 S. 2 AO: 0,25 % × (6.000 € − 2.000 €) = 10 € je Monat, Mindestbetrag 25 € je angefangenen Monat; × 3 Monate = 75 €."
+  },
+  {
+   "id": "ao-q-008",
+   "block": "AO-12",
+   "niveau": 2,
+   "sachverhalt": "Gegen den Geschäftsführer einer GmbH ist ein Haftungsbescheid wegen nicht abgeführter Lohnsteuer ergangen.",
+   "frage": "Muss das Finanzamt vor der Zahlungsaufforderung erst in das bewegliche Vermögen der GmbH vollstrecken?",
+   "optionen": [
+    {
+     "text": "Nein, die Subsidiarität gilt nicht bei Haftung für einzubehaltende und abzuführende Steuern.",
+     "richtig": true
+    },
+    {
+     "text": "Ja, die Zahlungsaufforderung ist stets erst nach erfolgloser Vollstreckung zulässig.",
+     "warum": "Übersieht die Ausnahme in § 219 S. 2 AO."
+    },
+    {
+     "text": "Nein, weil der Haftungsbescheid selbst schon Zahlungsaufforderung ist.",
+     "warum": "Haftungsbescheid (§ 191 AO) und Zahlungsaufforderung (§ 219 AO) sind zu trennen."
+    },
+    {
+     "text": "Ja, außer der Geschäftsführer hat vorsätzlich gehandelt.",
+     "warum": "Vorsatz allein reicht nicht; § 219 S. 2 AO nennt Steuerhinterziehung/-hehlerei und Abführungspflichten."
+    }
+   ],
+   "norm": "§ 219 S. 2 AO",
+   "erklaerung": "Lohnsteuer ist eine einzubehaltende und abzuführende Steuer; daher entfällt die Vorausvollstreckung beim Steuerschuldner."
+  }
+ ],
+ "schemas": [
+  {
+   "id": "ao-s-einspruch",
+   "block": "AO-09",
+   "titel": "Erfolgsaussichten eines Einspruchs",
+   "einleitung": "Gliederung: A. Zulässigkeit, B. Begründetheit, C. Ergebnis. Erst wenn der Einspruch zulässig ist, wird die Begründetheit geprüft.",
+   "schritte": [
+    {
+     "titel": "Statthaftigkeit",
+     "norm": "§ 347 Abs. 1, 2 AO; Ausschluss § 348 AO",
+     "detail": "Verwaltungsakt in einer Abgabenangelegenheit (§ 118 AO). Bei Untätigkeit: Untätigkeitseinspruch (§ 347 Abs. 1 S. 2 AO)."
+    },
+    {
+     "titel": "Form und Anbringungsbehörde",
+     "norm": "§ 357 Abs. 1, 2 AO",
+     "detail": "Schriftlich, elektronisch oder zur Niederschrift; erkennbar, wer Einspruch einlegt. Bei der Behörde, deren VA angefochten wird.",
+     "falle": "Unterschrift und Bezeichnung als „Einspruch“ sind nicht erforderlich; eine unrichtige Bezeichnung schadet nicht (§ 357 Abs. 1 AO)."
+    },
+    {
+     "titel": "Einspruchsfrist",
+     "norm": "§ 355 Abs. 1 AO, § 122 Abs. 2 AO, § 108 AO",
+     "detail": "Ein Monat ab Bekanntgabe; Bekanntgabe und Fristende taggenau berechnen. Bei Versäumung: Wiedereinsetzung prüfen (§ 110 AO).",
+     "falle": "Vier-Tages-Fiktion seit 1.1.2025; Fristende am Wochenende oder Feiertag verschiebt sich (§ 108 Abs. 3 AO)."
+    },
+    {
+     "titel": "Einspruchsbefugnis und Beschwer",
+     "norm": "§ 350 AO; §§ 351, 352 AO",
+     "detail": "Geltendmachung einer Rechtsverletzung. Einschränkungen bei Änderungsbescheiden (§ 351 Abs. 1 AO), Folgebescheiden (§ 351 Abs. 2 AO) und Feststellungsbescheiden (§ 352 AO)."
+    },
+    {
+     "titel": "Kein Verzicht, keine Rücknahme",
+     "norm": "§§ 354, 362 AO"
+    },
+    {
+     "titel": "Begründetheit",
+     "norm": "§ 367 Abs. 2 S. 1 AO",
+     "detail": "Der VA ist rechtswidrig und verletzt den Einspruchsführer in seinen Rechten. Volle Überprüfung der Sache.",
+     "falle": "Verböserung nur nach Hinweis und Gelegenheit zur Äußerung (§ 367 Abs. 2 S. 2 AO)."
+    },
+    {
+     "titel": "Ergebnis und Entscheidung",
+     "norm": "§ 367 Abs. 1, 2 AO; § 366 AO",
+     "detail": "Einspruchsentscheidung mit Begründung und Rechtsbehelfsbelehrung, oder Abhilfe durch Änderungsbescheid."
+    }
+   ],
+   "quelle": "Vault: Abgabenordnung/ILIAS/GS II/I. Außergerichtliches RB-Verfahren/IV. Prüfungsschema Einspruchsverfahren.pdf"
+  },
+  {
+   "id": "ao-s-verjaehrung",
+   "block": "AO-07",
+   "titel": "Festsetzungsverjährung",
+   "einleitung": "Ist die Festsetzung, Änderung oder Aufhebung noch zulässig? (§ 169 Abs. 1 S. 1 AO)",
+   "schritte": [
+    {
+     "titel": "Fristdauer",
+     "norm": "§ 169 Abs. 2 AO",
+     "detail": "Ein Jahr für Verbrauchsteuern, vier Jahre für die übrigen Steuern; zehn Jahre bei Steuerhinterziehung, fünf bei leichtfertiger Verkürzung."
+    },
+    {
+     "titel": "Fristbeginn",
+     "norm": "§ 170 Abs. 1 AO",
+     "detail": "Mit Ablauf des Kalenderjahres, in dem die Steuer entstanden ist (§ 38 AO, Einzelsteuergesetze)."
+    },
+    {
+     "titel": "Anlaufhemmung",
+     "norm": "§ 170 Abs. 2 S. 1 Nr. 1 AO",
+     "detail": "Bei Erklärungspflicht: Ablauf des Jahres der Einreichung, spätestens Ablauf des dritten Folgejahres nach Entstehung.",
+     "falle": "Nur bei gesetzlicher Abgabepflicht oder Aufforderung; bei Antragsveranlagung (§ 46 Abs. 2 Nr. 8 EStG) keine Anlaufhemmung."
+    },
+    {
+     "titel": "Fristende ohne Hemmung",
+     "norm": "§ 108 Abs. 1 AO i. V. m. § 188 BGB",
+     "detail": "Ende mit Ablauf eines Kalenderjahres."
+    },
+    {
+     "titel": "Ablaufhemmungen",
+     "norm": "§ 171 AO",
+     "detail": "Insbesondere: Abs. 2 (offenbare Unrichtigkeit), Abs. 3 (Antrag), Abs. 3a (Rechtsbehelf), Abs. 4 (Außenprüfung), Abs. 8 (Vorläufigkeit), Abs. 10 (Grundlagenbescheid)."
+    },
+    {
+     "titel": "Wahrung der Frist",
+     "norm": "§ 169 Abs. 1 S. 3 AO",
+     "detail": "Die Frist ist gewahrt, wenn der Bescheid vor ihrem Ablauf den Bereich der zuständigen Finanzbehörde verlassen hat, bei Datenabruf (§ 122a AO) die elektronische Benachrichtigung."
+    }
+   ],
+   "quelle": "Vault: Abgabenordnung/ILIAS/GS I/Modul II/I. Verjährung/XVII. Prüfungsschema Festsetzungsverjährung.pdf"
+  }
+ ]
+}

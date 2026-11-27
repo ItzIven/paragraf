@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151b24">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Paragraf">
+  <title>Paragraf · Lernen für die Laufbahnprüfung</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    // Theme vor dem ersten Rendern setzen, damit nichts aufblitzt
+    try {
+      const s = JSON.parse(localStorage.getItem('paragraf.device') || '{}');
+      document.documentElement.dataset.theme = s.theme || 'dark';
+      document.documentElement.style.setProperty('--scale', s.fontScale || 1);
+    } catch (e) { document.documentElement.dataset.theme = 'dark'; }
+  </script>
+</head>
+<body>
+  <div id="app" class="app">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <div class="nav__brand" aria-hidden="true"><span class="sigil">§</span><span class="nav__name">Paragraf</span></div>
+      <a href="#/heute" data-tab="heute"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-5v-5H9v5H4z"/></svg><span>Heute</span></a>
+      <a href="#/bloecke" data-tab="bloecke"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Lernblöcke</span></a>
+      <a href="#/karten" data-tab="karten"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6z M9 8h6 M9 12h6 M9 16h4"/></svg><span>Karten</span></a>
+      <a href="#/schemata" data-tab="schemata"><svg viewBox="0 0 24 24"><path d="M5 4h6v5H5zM13 15h6v5h-6zM8 9v4h8v2"/></svg><span>Schemata</span></a>
+      <a href="#/pruefen" data-tab="pruefen"><svg viewBox="0 0 24 24"><path d="M12 3v3M5 7l2 2M19 7l-2 2M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-8 3-3"/></svg><span>Prüfen</span></a>
+      <a href="#/einstellungen" data-tab="einstellungen" class="nav__settings"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 13a7.6 7.6 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.4 7.4 0 0 0-1.7-1L15 3.5h-4l-.4 2.5a7.4 7.4 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.6 7.6 0 0 0 0 2l-2 1.6 2 3.4 2.4-1c.5.4 1.1.8 1.7 1l.4 2.5h4l.4-2.5c.6-.2 1.2-.6 1.7-1l2.4 1 2-3.4z"/></svg><span>Mehr</span></a>
+    </nav>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+  <div id="overlay" class="overlay" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

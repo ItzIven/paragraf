@@ -1,0 +1,5 @@
+inhalte/
+.env
+*.local
+node_modules/
+CLAUDE.local.md

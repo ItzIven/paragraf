@@ -1,0 +1,680 @@
+{
+ "quelle": "Prüfungslehrplan optimiert (Ausarbeitung 30.10.2026)",
+ "blocks": [
+  {
+   "id": "AO-01",
+   "fach": "AO",
+   "titel": "Verfahrensgrundlagen und Beteiligte",
+   "prio": "A",
+   "normen": "§§ 1, 16-29, 33-36, 44, 45, 78-80 AO",
+   "lehrplanSeite": 3,
+   "stufe": 1
+  },
+  {
+   "id": "AO-02",
+   "fach": "AO",
+   "titel": "Ermittlung und Erklärungspflichten",
+   "prio": "A",
+   "normen": "§§ 85, 88, 90-93, 97, 98, 101-104, 149-153, 162, 328 ff. AO",
+   "lehrplanSeite": 3,
+   "stufe": 1
+  },
+  {
+   "id": "AO-03",
+   "fach": "AO",
+   "titel": "Steuergeheimnis",
+   "prio": "A",
+   "normen": "§ 30 Abs. 1-4 AO; bei Bedarf weitere Absätze",
+   "lehrplanSeite": 3,
+   "stufe": 1
+  },
+  {
+   "id": "AO-04",
+   "fach": "AO",
+   "titel": "Verwaltungsakt und Steuerbescheid",
+   "prio": "A",
+   "normen": "§§ 118, 119, 124-127, 155, 157, 164, 165, 167, 168 AO",
+   "lehrplanSeite": 3,
+   "stufe": 1
+  },
+  {
+   "id": "AO-05",
+   "fach": "AO",
+   "titel": "Bekanntgabe, Fristen und Wiedereinsetzung",
+   "prio": "A",
+   "normen": "§§ 108-110, 122, 122a, 355, 356 AO; §§ 187, 188 BGB",
+   "lehrplanSeite": 3,
+   "stufe": 1
+  },
+  {
+   "id": "AO-06",
+   "fach": "AO",
+   "titel": "Gesonderte und einheitliche Feststellung",
+   "prio": "A",
+   "normen": "§§ 179-183a, 175 Abs. 1 S. 1 Nr. 1, 351 Abs. 2, 352 AO",
+   "lehrplanSeite": 4,
+   "stufe": 1
+  },
+  {
+   "id": "AO-07",
+   "fach": "AO",
+   "titel": "Festsetzungs- und Feststellungsverjährung",
+   "prio": "A",
+   "normen": "§§ 169, 170, 171 Abs. 2-4, 8-10, 181 Abs. 5 AO",
+   "lehrplanSeite": 4,
+   "stufe": 1
+  },
+  {
+   "id": "AO-08",
+   "fach": "AO",
+   "titel": "Korrektur von Steuerbescheiden",
+   "prio": "A",
+   "normen": "§§ 129, 164, 165, 172-177 AO; § 175b AO im Überblick",
+   "lehrplanSeite": 4,
+   "stufe": 1
+  },
+  {
+   "id": "AO-09",
+   "fach": "AO",
+   "titel": "Einspruch: Zulässigkeit und Begründetheit",
+   "prio": "A",
+   "normen": "§§ 347, 350-359, 360, 362, 364a, 364b, 366, 367 AO",
+   "lehrplanSeite": 4,
+   "stufe": 1
+  },
+  {
+   "id": "AO-10",
+   "fach": "AO",
+   "titel": "Nebenwege des Rechtsschutzes",
+   "prio": "B/C",
+   "normen": "§§ 130, 131, 361, 363 AO; § 69 FGO",
+   "lehrplanSeite": 4,
+   "stufe": 2
+  },
+  {
+   "id": "AO-11",
+   "fach": "AO",
+   "titel": "Anspruch, Fälligkeit und Erlöschen",
+   "prio": "A",
+   "normen": "§§ 37, 38, 47, 218-240 AO, insbesondere §§ 222, 226-232, 238, 240",
+   "lehrplanSeite": 5,
+   "stufe": 3
+  },
+  {
+   "id": "AO-12",
+   "fach": "AO",
+   "titel": "Haftung und Duldung",
+   "prio": "A",
+   "normen": "§§ 34, 35, 69, 71, 74, 75, 191, 219 AO; § 42d EStG",
+   "lehrplanSeite": 5,
+   "stufe": 3
+  },
+  {
+   "id": "AO-13",
+   "fach": "AO",
+   "titel": "Steuerstraf- und Bußgeldrecht",
+   "prio": "A",
+   "normen": "§§ 369-371, 378, 385, 393 AO; ergänzend StGB/OWiG",
+   "lehrplanSeite": 5,
+   "stufe": 3
+  },
+  {
+   "id": "AO-14",
+   "fach": "AO",
+   "titel": "Vollstreckung",
+   "prio": "A/B",
+   "normen": "§§ 249 ff., 251, 254, 259, 281 ff., 309, 314 AO",
+   "lehrplanSeite": 5,
+   "stufe": 3
+  },
+  {
+   "id": "AO-15",
+   "fach": "AO",
+   "titel": "Außenprüfung und Randbereiche",
+   "prio": "B/C",
+   "normen": "§§ 193-203, 257, 258, 261, 322 AO; Insolvenzrecht nur nach Auftrag",
+   "lehrplanSeite": 5,
+   "stufe": 3
+  },
+  {
+   "id": "E-01",
+   "fach": "ESt",
+   "titel": "Persönliche und sachliche Steuerpflicht",
+   "prio": "A",
+   "normen": "§ 1 Abs. 1, 4; § 2 Abs. 1-5; §§ 13, 15, 18-23 EStG; §§ 8, 9 AO",
+   "lehrplanSeite": 7,
+   "stufe": 1
+  },
+  {
+   "id": "E-02",
+   "fach": "ESt",
+   "titel": "Zeitraum, Veranlagung und Tarif",
+   "prio": "A",
+   "normen": "§§ 2 Abs. 7, 4a, 11, 25, 26-26b, 32a, 36, 37 EStG",
+   "lehrplanSeite": 7,
+   "stufe": 1
+  },
+  {
+   "id": "E-03",
+   "fach": "ESt",
+   "titel": "Sonderausgaben und Altersentlastung",
+   "prio": "A/C",
+   "normen": "§§ 10, 10b, 10c, 24a, 34g EStG; § 22 Nr. 1a EStG",
+   "lehrplanSeite": 7,
+   "stufe": 2
+  },
+  {
+   "id": "E-04",
+   "fach": "ESt",
+   "titel": "Außergewöhnliche Belastungen und Familie",
+   "prio": "A",
+   "normen": "§§ 24b, 31, 32, 33, 33a, 33b, 62 ff. EStG",
+   "lehrplanSeite": 7,
+   "stufe": 2
+  },
+  {
+   "id": "E-05",
+   "fach": "ESt",
+   "titel": "Steuerermäßigungen und Verlustsystem",
+   "prio": "A",
+   "normen": "§§ 10d, 35a EStG; Spezialregeln insbesondere §§ 15a, 20 Abs. 6, 23 Abs. 3",
+   "lehrplanSeite": 7,
+   "stufe": 2
+  },
+  {
+   "id": "E-06",
+   "fach": "ESt",
+   "titel": "Nichtselbstständige Arbeit",
+   "prio": "A",
+   "normen": "§§ 3, 8 Abs. 1-3, 9, 9a, 19 EStG; § 4 Abs. 5 S. 1 Nr. 6b/6c über § 9 Abs. 5",
+   "lehrplanSeite": 8,
+   "stufe": 2
+  },
+  {
+   "id": "E-07",
+   "fach": "ESt",
+   "titel": "Vermietung: Quelle und Zurechnung",
+   "prio": "A",
+   "normen": "§ 21 Abs. 1-2, § 9 Abs. 1 EStG; Zurechnung nach Sachverhalt",
+   "lehrplanSeite": 8,
+   "stufe": 2
+  },
+  {
+   "id": "E-08",
+   "fach": "ESt",
+   "titel": "Gebäude: AfA und Aufwendungen",
+   "prio": "A",
+   "normen": "§ 6 Abs. 1 Nr. 1a; § 7 Abs. 4-5a; § 9 Abs. 1 S. 3 Nr. 1/7 EStG",
+   "lehrplanSeite": 8,
+   "stufe": 2
+  },
+  {
+   "id": "E-09",
+   "fach": "ESt",
+   "titel": "Private Veräußerungsgeschäfte",
+   "prio": "A",
+   "normen": "§ 22 Nr. 2 i. V. m. § 23 Abs. 1 und 3 EStG",
+   "lehrplanSeite": 8,
+   "stufe": 2
+  },
+  {
+   "id": "E-10",
+   "fach": "ESt",
+   "titel": "Weitere sonstige Einkünfte",
+   "prio": "B/C",
+   "normen": "§ 22 Nr. 1, 1a, 3; § 9a S. 1 Nr. 3 EStG; Lohnsteuerverfahren nach Auftrag",
+   "lehrplanSeite": 8,
+   "stufe": 2
+  },
+  {
+   "id": "E-11",
+   "fach": "ESt",
+   "titel": "Betriebliche Einkünfte und EÜR",
+   "prio": "A",
+   "normen": "§ 4 Abs. 3-5b einschließlich Abs. 4a; §§ 12, 15, 18 EStG; § 9 Abs. 5 EStG",
+   "lehrplanSeite": 9,
+   "stufe": 2
+  },
+  {
+   "id": "E-12",
+   "fach": "ESt",
+   "titel": "Betriebsveräußerung, Aufgabe und Verpachtung",
+   "prio": "A",
+   "normen": "§§ 16, 18 Abs. 3, 34; § 16 Abs. 3b; § 3 Nr. 40, § 3c Abs. 2 EStG",
+   "lehrplanSeite": 9,
+   "stufe": 2
+  },
+  {
+   "id": "E-13",
+   "fach": "ESt",
+   "titel": "Gewerbesteuer",
+   "prio": "A",
+   "normen": "§§ 2, 3, 5, 7-11, 14, 16, 28 ff. GewStG; § 35 EStG",
+   "lehrplanSeite": 9,
+   "stufe": 2
+  },
+  {
+   "id": "E-14",
+   "fach": "ESt",
+   "titel": "Vorweggenommene Erbfolge und Erbauseinandersetzung",
+   "prio": "A",
+   "normen": "§ 6 Abs. 3, § 16 Abs. 3 EStG; §§ 9, 10 Abs. 1a Nr. 2, 22 Nr. 1a EStG; § 11d EStDV",
+   "lehrplanSeite": 9,
+   "stufe": 3
+  },
+  {
+   "id": "E-15",
+   "fach": "ESt",
+   "titel": "Wiederkehrende Leistungen und Betriebsaufspaltung",
+   "prio": "A",
+   "normen": "§§ 10 Abs. 1a Nr. 2, 15, 22 EStG; Betriebsaufspaltung: Rechtsprechungsgrundsätze",
+   "lehrplanSeite": 9,
+   "stufe": 3
+  },
+  {
+   "id": "E-16",
+   "fach": "ESt",
+   "titel": "Kapitalvermögen und § 17 EStG",
+   "prio": "A/C",
+   "normen": "§§ 17, 20, 32d Abs. 1-6, 43 ff.; § 3 Nr. 40, § 3c Abs. 2 EStG",
+   "lehrplanSeite": 10,
+   "stufe": 3
+  },
+  {
+   "id": "E-17",
+   "fach": "ESt",
+   "titel": "Internationales Steuerrecht",
+   "prio": "A/B/C",
+   "normen": "§ 1 Abs. 2-3, § 1a, §§ 32b, 34c, 34d, 49-50a EStG; § 2a EStG; konkretes DBA",
+   "lehrplanSeite": 10,
+   "stufe": 3
+  },
+  {
+   "id": "E-18",
+   "fach": "ESt",
+   "titel": "Begünstigung nicht entnommener Gewinne",
+   "prio": "A",
+   "normen": "§ 34a EStG",
+   "lehrplanSeite": 10,
+   "stufe": 3
+  },
+  {
+   "id": "U-01",
+   "fach": "USt",
+   "titel": "Unternehmer, Unternehmen und Leistung",
+   "prio": "A",
+   "normen": "§ 1 Abs. 1 Nr. 1; § 2 Abs. 1; § 3 Abs. 1, 9 UStG",
+   "lehrplanSeite": 11,
+   "stufe": 1
+  },
+  {
+   "id": "U-02",
+   "fach": "USt",
+   "titel": "Ort und Steuerbarkeit",
+   "prio": "A",
+   "normen": "§ 1 Abs. 2-3; § 3 Abs. 3-7; § 3a Abs. 1-3 UStG",
+   "lehrplanSeite": 11,
+   "stufe": 1
+  },
+  {
+   "id": "U-03",
+   "fach": "USt",
+   "titel": "Steuerbefreiung, Option, Betrag und Schuld",
+   "prio": "A",
+   "normen": "§ 4 insbesondere Nr. 12/28; §§ 9, 10, 12, 13, 13a, 18, 20 UStG",
+   "lehrplanSeite": 11,
+   "stufe": 1
+  },
+  {
+   "id": "U-04",
+   "fach": "USt",
+   "titel": "Rechnung und Vorsteuerabzug",
+   "prio": "A",
+   "normen": "§§ 14, 14a, 14c; § 15 Abs. 1-4 UStG; § 33 UStDV",
+   "lehrplanSeite": 11,
+   "stufe": 1
+  },
+  {
+   "id": "U-05",
+   "fach": "USt",
+   "titel": "Unentgeltliche Wertabgaben",
+   "prio": "A",
+   "normen": "§ 3 Abs. 1b, 9a; § 10 Abs. 4; § 13 Abs. 1 Nr. 2 UStG",
+   "lehrplanSeite": 11,
+   "stufe": 1
+  },
+  {
+   "id": "U-06",
+   "fach": "USt",
+   "titel": "Drittland: Ausfuhr und Einfuhr",
+   "prio": "A/B",
+   "normen": "§ 1 Abs. 1 Nr. 4; § 3 Abs. 8; § 4 Nr. 1 Buchst. a; §§ 5, 6; § 15 Abs. 1 S. 1 Nr. 2 UStG",
+   "lehrplanSeite": 12,
+   "stufe": 2
+  },
+  {
+   "id": "U-07",
+   "fach": "USt",
+   "titel": "Innergemeinschaftliche Lieferung und Erwerb",
+   "prio": "A",
+   "normen": "§§ 1a, 3d, 4b; § 4 Nr. 1 Buchst. b, § 6a; §§ 14a, 18a UStG",
+   "lehrplanSeite": 12,
+   "stufe": 2
+  },
+  {
+   "id": "U-08",
+   "fach": "USt",
+   "titel": "Verbringen und Fernverkauf",
+   "prio": "A",
+   "normen": "§ 3 Abs. 1a; § 1a Abs. 2; § 3c UStG",
+   "lehrplanSeite": 12,
+   "stufe": 2
+  },
+  {
+   "id": "U-09",
+   "fach": "USt",
+   "titel": "Reihengeschäft und Dreiecksgeschäft",
+   "prio": "A",
+   "normen": "§ 3 Abs. 6a, 7; § 25b UStG",
+   "lehrplanSeite": 12,
+   "stufe": 2
+  },
+  {
+   "id": "U-10",
+   "fach": "USt",
+   "titel": "Sonstige Leistungen und Reverse Charge",
+   "prio": "A",
+   "normen": "§§ 3a, 3b; § 3 Abs. 11; § 4 Nr. 3/5; § 13b Abs. 1, Abs. 2 Nr. 1, Abs. 5 UStG",
+   "lehrplanSeite": 12,
+   "stufe": 2
+  },
+  {
+   "id": "U-11",
+   "fach": "USt",
+   "titel": "Grundstücke und inländischer § 13b",
+   "prio": "A",
+   "normen": "§ 4 Nr. 9 Buchst. a; § 9; § 13b Abs. 2 Nr. 3/4, Abs. 5; § 3 Abs. 12 UStG",
+   "lehrplanSeite": 13,
+   "stufe": 2
+  },
+  {
+   "id": "U-12",
+   "fach": "USt",
+   "titel": "Änderung der Bemessungsgrundlage",
+   "prio": "A",
+   "normen": "§ 17 Abs. 1-2 UStG",
+   "lehrplanSeite": 13,
+   "stufe": 2
+  },
+  {
+   "id": "U-13",
+   "fach": "USt",
+   "titel": "Vorsteuerberichtigung",
+   "prio": "A",
+   "normen": "§ 15a Abs. 1-3, 6-10 UStG; § 44 UStDV",
+   "lehrplanSeite": 13,
+   "stufe": 3
+  },
+  {
+   "id": "U-14",
+   "fach": "USt",
+   "titel": "Kleinunternehmer und Differenzbesteuerung",
+   "prio": "A",
+   "normen": "§§ 19, 25a UStG; § 15a UStG",
+   "lehrplanSeite": 13,
+   "stufe": 2
+  },
+  {
+   "id": "U-15",
+   "fach": "USt",
+   "titel": "Geschäftsveräußerung und Gesellschaften",
+   "prio": "A/B",
+   "normen": "§ 1 Abs. 1a; § 15a Abs. 10; §§ 2, 10 Abs. 5, 15; § 2 Abs. 2 Nr. 2 UStG",
+   "lehrplanSeite": 13,
+   "stufe": 3
+  },
+  {
+   "id": "G-01",
+   "fach": "BdG",
+   "titel": "Handels- und Gesellschaftsrecht",
+   "prio": "A/B/C",
+   "normen": "§§ 1 ff., 48 ff., 105 ff., 161 ff., 230 ff. HGB; §§ 705 ff. BGB; GmbHG/AktG/PartGG",
+   "lehrplanSeite": 15,
+   "stufe": 2
+  },
+  {
+   "id": "G-02",
+   "fach": "BdG",
+   "titel": "Mitunternehmer und Einkunftsart",
+   "prio": "A",
+   "normen": "§ 15 Abs. 1 S. 1 Nr. 2, Abs. 3; § 18 Abs. 4; § 20 Abs. 1 Nr. 4 EStG",
+   "lehrplanSeite": 15,
+   "stufe": 2
+  },
+  {
+   "id": "G-03",
+   "fach": "BdG",
+   "titel": "Betriebsvermögen und Sonderbereich",
+   "prio": "A",
+   "normen": "§ 15 Abs. 1 S. 1 Nr. 2 EStG; § 39 Abs. 2 Nr. 2 AO; § 4 Abs. 1 EStG",
+   "lehrplanSeite": 15,
+   "stufe": 2
+  },
+  {
+   "id": "G-04",
+   "fach": "BdG",
+   "titel": "Gewinnermittlung und Gewinnverteilung",
+   "prio": "A",
+   "normen": "§§ 4 Abs. 1, 5 Abs. 1, 15 Abs. 1 S. 1 Nr. 2 EStG; §§ 179, 180 Abs. 1 S. 1 Nr. 2 Buchst. a AO",
+   "lehrplanSeite": 15,
+   "stufe": 2
+  },
+  {
+   "id": "G-05",
+   "fach": "BdG",
+   "titel": "Besonderheiten der GmbH & Co. KG",
+   "prio": "A",
+   "normen": "§ 15 Abs. 1 S. 1 Nr. 2 EStG; §§ 4, 5 EStG; HGB-Beteiligungsansatz nach Fall",
+   "lehrplanSeite": 16,
+   "stufe": 2
+  },
+  {
+   "id": "G-06",
+   "fach": "BdG",
+   "titel": "Gesellschafterwechsel und Ausscheiden",
+   "prio": "A",
+   "normen": "§ 16 Abs. 1 S. 1 Nr. 2; §§ 34, 6b EStG; Ergänzungsbilanz nach Erwerbsvorgang",
+   "lehrplanSeite": 16,
+   "stufe": 3
+  },
+  {
+   "id": "G-07",
+   "fach": "BdG",
+   "titel": "Verluste bei beschränkter Haftung",
+   "prio": "A",
+   "normen": "§ 15a Abs. 1, 1a, 2-5 EStG; § 171 Abs. 1 HGB",
+   "lehrplanSeite": 16,
+   "stufe": 3
+  },
+  {
+   "id": "G-08",
+   "fach": "BdG",
+   "titel": "Verknüpfung mit Gewerbesteuer und Bilanz",
+   "prio": "A",
+   "normen": "§§ 7-11 GewStG; § 35 EStG; § 6 Abs. 3/5 EStG; § 24 UmwStG",
+   "lehrplanSeite": 16,
+   "stufe": 2
+  },
+  {
+   "id": "G-09",
+   "fach": "BdG",
+   "titel": "Steuerpflicht und Einkommensermittlung",
+   "prio": "A/B",
+   "normen": "§§ 1, 2, 5, 7, 8, 10, 23, 30, 31 KStG; § 4 Abs. 5b EStG",
+   "lehrplanSeite": 17,
+   "stufe": 3
+  },
+  {
+   "id": "G-10",
+   "fach": "BdG",
+   "titel": "Ausschüttungen und Einlagen",
+   "prio": "A",
+   "normen": "§ 8 Abs. 3 S. 1-6, § 32a KStG; § 20 Abs. 1 Nr. 1, § 3 Nr. 40, § 3c Abs. 2 EStG",
+   "lehrplanSeite": 17,
+   "stufe": 3
+  },
+  {
+   "id": "G-11",
+   "fach": "BdG",
+   "titel": "Beteiligungserträge nach § 8b KStG",
+   "prio": "A",
+   "normen": "§ 8b Abs. 1-6 KStG; § 8 Nr. 5, § 9 Nr. 2a/7 GewStG",
+   "lehrplanSeite": 17,
+   "stufe": 3
+  },
+  {
+   "id": "G-12",
+   "fach": "BdG",
+   "titel": "Einlagekonto und Verlustabzug",
+   "prio": "A",
+   "normen": "§ 27 KStG; §§ 8c, 8d KStG; § 10d EStG über § 8 Abs. 1 KStG",
+   "lehrplanSeite": 17,
+   "stufe": 3
+  },
+  {
+   "id": "B-01",
+   "fach": "BilR",
+   "titel": "Buchführung und Gewinnermittlung",
+   "prio": "A/B",
+   "normen": "§§ 140, 141 AO; §§ 238 ff. HGB; §§ 4 Abs. 1/3, 5 Abs. 1 EStG",
+   "lehrplanSeite": 19,
+   "stufe": 1
+  },
+  {
+   "id": "B-02",
+   "fach": "BilR",
+   "titel": "Ansatz dem Grunde nach und Zurechnung",
+   "prio": "A",
+   "normen": "§ 39 AO; §§ 246, 248, 252 HGB; §§ 4, 5 EStG",
+   "lehrplanSeite": 19,
+   "stufe": 1
+  },
+  {
+   "id": "B-03",
+   "fach": "BilR",
+   "titel": "Anschaffungskosten und Bewertungsgrundsätze",
+   "prio": "A",
+   "normen": "§§ 252, 253, 255 Abs. 1-2 HGB; § 6 Abs. 1, Abs. 6; § 9b EStG",
+   "lehrplanSeite": 19,
+   "stufe": 1
+  },
+  {
+   "id": "B-04",
+   "fach": "BilR",
+   "titel": "AfA, Teilwert und Wertaufholung",
+   "prio": "A",
+   "normen": "§ 6 Abs. 1 Nr. 1-2, Abs. 2; § 7 EStG; § 253 HGB",
+   "lehrplanSeite": 19,
+   "stufe": 1
+  },
+  {
+   "id": "B-05",
+   "fach": "BilR",
+   "titel": "Entnahmen und Einlagen",
+   "prio": "A",
+   "normen": "§ 4 Abs. 1 S. 2, 8; § 6 Abs. 1 Nr. 4-5; § 7 EStG",
+   "lehrplanSeite": 19,
+   "stufe": 1
+  },
+  {
+   "id": "B-06",
+   "fach": "BilR",
+   "titel": "Schulden, Rechnungsabgrenzung und Anzahlungen",
+   "prio": "A",
+   "normen": "§ 6 Abs. 1 Nr. 3; § 5 Abs. 5 EStG; §§ 250, 253 HGB",
+   "lehrplanSeite": 20,
+   "stufe": 2
+  },
+  {
+   "id": "B-07",
+   "fach": "BilR",
+   "titel": "Grundstücke und Bauten",
+   "prio": "A",
+   "normen": "§ 39 AO; §§ 4-7 EStG; Grundstücks- und Zurechnungsgrundsätze nach Fall",
+   "lehrplanSeite": 20,
+   "stufe": 2
+  },
+  {
+   "id": "B-08",
+   "fach": "BilR",
+   "titel": "Vorräte und Forderungen",
+   "prio": "A",
+   "normen": "§ 6 Abs. 1 Nr. 2, Abs. 1 Nr. 2a EStG; §§ 253, 256 HGB; § 17 UStG",
+   "lehrplanSeite": 20,
+   "stufe": 2
+  },
+  {
+   "id": "B-09",
+   "fach": "BilR",
+   "titel": "Bilanzberichtigung und Bilanzänderung",
+   "prio": "A",
+   "normen": "§ 4 Abs. 2 EStG; einschlägige AO-Korrekturnorm",
+   "lehrplanSeite": 20,
+   "stufe": 2
+  },
+  {
+   "id": "B-10",
+   "fach": "BilR",
+   "titel": "Mehr-/Weniger-Rechnung und § 7g",
+   "prio": "A",
+   "normen": "§ 7g Abs. 1-6; § 4 Abs. 1 EStG; betroffene Ansatz-/Bewertungsnormen",
+   "lehrplanSeite": 20,
+   "stufe": 2
+  },
+  {
+   "id": "B-11",
+   "fach": "BilR",
+   "titel": "Firmenwert, Rücklagen und Schuldübernahme",
+   "prio": "A/C",
+   "normen": "§ 6 Abs. 1 Nr. 7; § 7 Abs. 1 S. 3; §§ 4f, 5 Abs. 7, 6b EStG; R 6.6 EStR",
+   "lehrplanSeite": 21,
+   "stufe": 2
+  },
+  {
+   "id": "B-12",
+   "fach": "BilR",
+   "titel": "Rückstellungen",
+   "prio": "A/C",
+   "normen": "§ 249 HGB; § 5 Abs. 2a, 4a, 4b; § 6 Abs. 1 Nr. 3a EStG",
+   "lehrplanSeite": 21,
+   "stufe": 2
+  },
+  {
+   "id": "B-13",
+   "fach": "BilR",
+   "titel": "Einzel-WG zwischen Vermögensbereichen",
+   "prio": "A",
+   "normen": "§ 6 Abs. 1 Nr. 4-5, Abs. 5-6 EStG; § 24 UmwStG nur bei betrieblicher Einheit",
+   "lehrplanSeite": 21,
+   "stufe": 3
+  },
+  {
+   "id": "B-14",
+   "fach": "BilR",
+   "titel": "Anteile und Einbringung in Kapitalgesellschaften",
+   "prio": "B",
+   "normen": "§ 6b Abs. 10 EStG; §§ 20-22 UmwStG; § 3 Nr. 40, § 3c Abs. 2 EStG / § 8b KStG",
+   "lehrplanSeite": 21,
+   "stufe": 3
+  },
+  {
+   "id": "B-15",
+   "fach": "BilR",
+   "titel": "Gründung und Eintritt in eine Mitunternehmerschaft",
+   "prio": "A/B/C",
+   "normen": "§ 6 Abs. 3/5 EStG; § 24 UmwStG; §§ 4, 5 EStG",
+   "lehrplanSeite": 21,
+   "stufe": 2
+  }
+ ]
+}
