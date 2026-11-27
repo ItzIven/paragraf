@@ -2,6 +2,7 @@ import { progress, commit } from '../store.js';
 import { db, fachName, cardsFor, questionsFor, blockById } from '../content.js';
 import { CONFIG } from '../config.js';
 import { esc, sheet, toast, pct } from '../ui.js';
+import { blockSeries, chart, pill } from '../stats.js';
 
 const STATUS = ['Offen', 'Begonnen', 'Gelernt', 'Klausurfest'];
 const filter = { fach: 'alle', stufe: 'alle' };
@@ -26,7 +27,7 @@ export function render(view, [openId]) {
         <div class="register">${g.items.map((b) => `
           <button class="reg-item" data-id="${b.id}" data-status="${st(b.id)}">
             <span class="code">${b.id}</span>
-            <span><span class="title">${esc(b.titel)}</span><br><span class="meta">${STATUS[st(b.id)]} · ${cardsFor({ block: b.id }).length} Karten · ${questionsFor({ block: b.id }).length} Fragen</span></span>
+            <span><span class="title">${esc(b.titel)}</span><br><span class="meta">${STATUS[st(b.id)]} · ${cardsFor({ block: b.id }).length} Karten · ${questionsFor({ block: b.id }).length} Fragen${(() => { const s = blockSeries(b.id, 3); if (!s.length) return ''; const r = s.reduce((a, x) => a + x.r, 0), n = s.reduce((a, x) => a + x.n, 0); return ` · zuletzt ${pill(pct(r, n))}`; })()}</span></span>
             <span class="prio" title="Lernpriorität">${b.prio}</span>
           </button>`).join('')}</div></section>`).join('')}
     </div>`;
@@ -43,6 +44,7 @@ function openBlock(id, view) {
   const nCards = cardsFor({ block: id }).length, nQ = questionsFor({ block: id }).length;
   const schemas = db.schemas.filter((s) => s.block === id || (s.blocks || []).includes(id));
   const answers = questionsFor({ block: id }).flatMap((q) => progress.answers[q.id]?.ok || []);
+  const series = blockSeries(id);
   sheet(`
     <div class="ruled"><div class="margin">${b.id}<br><span class="muted">${b.prio}</span></div>
     <div class="body stack">
@@ -50,6 +52,7 @@ function openBlock(id, view) {
       <p class="small muted" style="margin:0">${fachName(b.fach)}, Stufe ${b.stufe}, Lehrplan-PDF S. ${b.lehrplanSeite}</p>
       ${b.normen ? `<p><b>Normanker:</b> ${esc(b.normen)}</p>` : ''}
       ${answers.length ? `<p class="small">Trefferquote zuletzt: <b>${pct(answers.filter(Boolean).length, answers.length)} %</b> aus ${answers.length} Antworten</p>` : ''}
+      ${series.length ? `<div><div class="small muted">Verlauf der letzten ${series.length} Runde${series.length > 1 ? 'n' : ''} (Linie = 50 %)</div>${chart(series)}</div>` : ''}
       <div><div class="small muted">Wie sicher bist du?</div>
         <div class="status-pick">${STATUS.map((s, i) => `<button data-s="${i}" aria-pressed="${cur === i}">${s}</button>`).join('')}</div></div>
       <div class="btn-row">

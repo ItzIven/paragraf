@@ -293,3 +293,12 @@ textarea.input { padding: 10px 12px; min-height: 120px; resize: vertical; }
 .review.ok .mark{color:var(--ok)} .review.bad .mark{color:var(--bad)}
 .review.bad{border-left:3px solid var(--bad)} .review.ok{border-left:3px solid var(--ok)}
 .why-list{margin:0;padding-left:1.1rem}
+
+/* Lernstatistik */
+.spark { display: block; margin-top: 6px; max-width: 100%; height: auto; }
+.spark .sbar--ok { fill: var(--ok); } .spark .sbar--mid { fill: var(--mid); } .spark .sbar--bad { fill: var(--bad); }
+.spark-mid { stroke: var(--line); stroke-dasharray: 3 3; }
+.pill { display: inline-block; padding: 0 7px; border-radius: 99px; font-size: .8em; font-weight: 600; line-height: 1.6; }
+.pill--ok { background: color-mix(in srgb, var(--ok) 22%, transparent); color: var(--ok); }
+.pill--mid { background: color-mix(in srgb, var(--mid) 22%, transparent); color: var(--mid); }
+.pill--bad { background: color-mix(in srgb, var(--bad) 22%, transparent); color: var(--bad); }

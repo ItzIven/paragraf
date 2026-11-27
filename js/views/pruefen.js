@@ -2,6 +2,7 @@ import { progress, commit } from '../store.js';
 import { db, questionsFor, blockById, fachName } from '../content.js';
 import { CONFIG } from '../config.js';
 import { esc, rich, shuffle, pct, toast } from '../ui.js';
+import { blockTable, pill, trendText } from '../stats.js';
 
 // #/pruefen · #/pruefen/block/<id>
 const cfg = { mode: 'training', n: 10, faecher: null, art: 'alle' };
@@ -31,6 +32,7 @@ export function render(view, [kind, arg]) {
     <div class="chips">${[5, 10, 20, 30].map((n) => `<button class="chip" data-n="${n}" aria-pressed="${cfg.n === n}">${n}</button>`).join('')}</div>
     ${cfg.mode === 'klausur' ? '<p class="small muted">Zeit: eine Minute je Punkt (Fragen zählen 1 bis 3 Punkte nach Schwierigkeit). Fälle zählen als Ganzes.</p>' : ''}
     <button class="btn btn--primary btn--block" id="go" ${pool.length ? '' : 'disabled'} style="margin-top:12px">${pool.length ? 'Starten' : 'Keine Fragen in dieser Auswahl'}</button>
+    ${weak()}
     ${history()}`;
   view.querySelectorAll('[data-mode]').forEach((b) => b.onclick = () => { cfg.mode = b.dataset.mode; render(view, []); });
   view.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { const f = b.dataset.f; cfg.faecher = cfg.faecher.includes(f) ? cfg.faecher.filter((x) => x !== f) : [...cfg.faecher, f]; render(view, []); });
@@ -66,6 +68,13 @@ const pts = (q) => q.punkte ?? q.niveau ?? 2;
 
 const fmtDate = (t) => new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 const resultText = (e) => (e.max ? `${pct(e.got, e.max)} % · ${e.np} NP` : `${pct(e.right, e.n)} %`);
+
+function weak() {
+  const rows = blockTable(30, 3);
+  if (!rows.length) return '';
+  return `<h2>Lernblöcke der letzten 30 Tage</h2><p class="small muted" style="margin-top:-6px">Schwächste zuerst, ab 3 beantworteten Fragen. Trend: letzte Runde gegenüber dem Schnitt davor.</p>
+    <table class="table"><tr><th>Block</th><th>Quote</th><th>Trend</th><th></th></tr>${rows.slice(0, 8).map((x) => `<tr><td><a href="#/bloecke/${x.id}">${esc(x.id)}</a> <span class="small muted">${esc(blockById(x.id)?.titel || fachName(x.id))}</span></td><td>${pill(x.p)} <span class="small muted">${x.r}/${x.n}</span></td><td class="small">${trendText(x.trend)}</td><td><a href="#/pruefen/block/${x.id}">Üben</a></td></tr>`).join('')}</table>`;
+}
 
 function history() {
   const ex = progress.exams.slice(-10).reverse();

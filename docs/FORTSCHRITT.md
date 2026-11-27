@@ -1,11 +1,11 @@
 # Fortschritt „Paragraf“
 
-Stand: 27.11.2026, Version 0.3.6. Gesamt: **63 %** (gewichtet).
+Stand: 27.11.2026, Version 0.3.7. Gesamt: **64 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
 | Grundfunktionen (Profile, Karten, Schemata, Prüfen, Lernblöcke, Einstellungen, offline) | 20 % | 95 % | Feinschliff nach echtem Gebrauch |
-| Klausurfunktionen | 10 % | 90 % | Fertig: Rechnen, Fälle, Punkte/Notenpunkte, Filter „Nur Fälle/Nur Rechnen“, Rückblick auf Runden mit eigener/richtiger Antwort. Offen: Statistik je Block über Zeit |
+| Klausurfunktionen | 10 % | 100 % | Fertig: Rechnen, Fälle, Punkte/Notenpunkte, Filter „Nur Fälle/Nur Rechnen“, Rückblick auf Runden mit eigener/richtiger Antwort. Statistik je Block (Verlauf je Runde, schwächste Blöcke der letzten 30 Tage mit Trend) |
 | Sync iPhone/iPad und Login (Supabase) | 10 % | 80 % | Projekt in Frankfurt, Schema, Registrierung aus, Admin-Upload aus der App; alle 5 Fächer hochgeladen (27.11.2026). Offen: Test auf iPhone/iPad, weitere Konten |
 | Veröffentlichung (GitHub Pages, Home-Bildschirm) | 5 % | 80 % | Online unter itziven.github.io/paragraf; offen: Test auf iPhone/iPad |
 | Inhalte AO | 15 % | 65 % | 70 Karten, 43 Fragen (4 Fälle: Erhebung, Bekanntgabe/Wiedereinsetzung, § 173/§ 177, GF-Haftung), 8 Schemata; alle 15 AO-Blöcke belegt. Offen: mehr Fälle, Schemata AdV/Vollstreckung |
