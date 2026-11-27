@@ -39,6 +39,19 @@ export function importContent(text) {
   return pack;
 }
 
+export const localPacks = () => { try { return JSON.parse(localStorage.getItem(LOCAL) || '[]'); } catch { return []; } };
+
+// Per Datei geladene Inhalte nach Supabase übertragen (nur Admin-Konten, siehe schema.sql)
+export async function uploadLocal() {
+  const p = activeProfile();
+  if (!hasSync() || !p?.session) throw new Error('Nicht mit Sync verbunden');
+  p.session = await sb.refresh(p.session);
+  const done = [];
+  for (const pack of localPacks()) { await sb.uploadContent(p.session, pack); done.push(pack.fach); }
+  await refreshRemote();
+  return done;
+}
+
 export async function refreshRemote() {
   const p = activeProfile();
   if (!hasSync() || !p?.session || !navigator.onLine) return false;

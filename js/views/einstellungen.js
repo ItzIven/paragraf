@@ -1,5 +1,5 @@
 import { device, saveDevice, progress, commit, activeProfile, logout, connectSync, disconnectSync, syncState, sync, exportData, importData, removeProfile } from '../store.js';
-import { db, refreshRemote, importContent } from '../content.js';
+import { db, refreshRemote, importContent, uploadLocal, localPacks } from '../content.js';
 import { CONFIG, hasSync } from '../config.js';
 import { esc, toast, sheet } from '../ui.js';
 
@@ -44,7 +44,7 @@ export function render(view) {
     <div class="panel stack small">
       ${packs.map(([f, i]) => `<div class="row"><b>${f}</b><span class="muted">Version ${esc(String(i.version))}, ${i.origin === 'online' ? 'online geladen' : i.origin === 'datei' ? 'aus Datei' : 'mitgeliefert'}</span>${i.demo ? '<span class="demo-note">Demo</span>' : ''}</div>`).join('') || '<span class="muted">Keine Inhalte geladen.</span>'}
       <div class="row"><span class="muted">${db.cards.length} Karten, ${db.questions.length} Fragen, ${db.schemas.length} Schemata, ${db.blocks.length} Lernblöcke</span></div>
-      <div class="btn-row">${p.session ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdateien laden</label><input type="file" id="cimp" accept="application/json,.json" multiple hidden></div>
+      <div class="btn-row">${p.session ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdateien laden</label><input type="file" id="cimp" accept="application/json,.json" multiple hidden>${p.session && localPacks().length ? '<button class="btn" id="cup">Auf Supabase hochladen</button>' : ''}</div>
       <p class="muted" style="margin:0">Inhalte sind Lernhilfen und ersetzen nicht Gesetz, Richtlinien und die amtlichen Handbücher. Fehler bitte notieren und melden.</p>
     </div>
     <p class="small muted" style="margin-top:24px">${CONFIG.appName} ${CONFIG.version}</p>`;
@@ -86,5 +86,11 @@ export function render(view) {
     toast(`${ok.length ? `Geladen: ${ok.join(', ')}` : ''}${bad.length ? `${ok.length ? ' · ' : ''}Nicht lesbar: ${bad.join(', ')}` : ''}`);
     render(view);
   };
+  $('#cup')?.addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    try { const f = await uploadLocal(); toast(`Hochgeladen: ${f.join(', ')}`); }
+    catch (err) { toast(/row-level security|42501|403/i.test(err.message) ? 'Hochladen nicht erlaubt: Konto ist nicht als Admin eingetragen' : `Fehler: ${err.message}`); }
+    render(view);
+  });
   $('#reload')?.addEventListener('click', async () => { toast((await refreshRemote()) ? 'Inhalte aktualisiert' : 'Keine Online-Inhalte gefunden'); render(view); });
 }

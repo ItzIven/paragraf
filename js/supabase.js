@@ -47,6 +47,15 @@ export async function pushProgress(session, data) {
   }, session.access_token);
 }
 
+export async function uploadContent(session, pack) {
+  const { fach, version, ...rest } = pack;
+  await call('/rest/v1/content?on_conflict=fach', {
+    method: 'POST',
+    headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
+    body: JSON.stringify({ fach, version, data: rest, updated_at: new Date().toISOString() }),
+  }, session.access_token);
+}
+
 export async function fetchContent(session) {
   return call('/rest/v1/content?select=fach,version,data', {}, session.access_token);
 }
