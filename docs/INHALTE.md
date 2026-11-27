@@ -65,7 +65,7 @@ Normale Fragen oder Rechenaufgaben mit gemeinsamer `fall`-ID und fortlaufendem `
 `punkte` (optional) überschreibt die Punktzahl einer Frage, sonst zählt `niveau` (1–3). Der Klausurmodus rechnet den Anteil an der Höchstpunktzahl mit dem Schlüssel der HS-Aufsichtsarbeiten 2024 in Notenpunkte um (15 ab 96 %, 14 ab 91, 13 ab 87, 12 ab 82, 11 ab 78, 10 ab 73, 9 ab 68, 8 ab 64, 7 ab 59, 6 ab 54, 5 ab 50, 4 ab 40, 3 ab 30, 2 ab 25, 1 ab 20 %). Zeit: eine Minute je Punkt.
 
 ## Inhalte ohne Supabase nutzen
-In der App unter **Mehr → Inhalte → Inhaltsdatei laden** die JSON-Datei wählen (z. B. `inhalte/ao.json`). Sie ersetzt die Inhalte dieses Fachs auf dem Gerät, bleibt offline erhalten und ist pro Gerät einmal zu laden.
+In der App unter **Mehr → Inhalte → Inhaltsdateien laden** eine oder mehrere JSON-Dateien zugleich wählen (z. B. `ao.json`, `ust.json`, `est.json`). Sie ersetzt die Inhalte dieses Fachs auf dem Gerät, bleibt offline erhalten und ist pro Gerät einmal zu laden.
 
 ## Schema
 ```json

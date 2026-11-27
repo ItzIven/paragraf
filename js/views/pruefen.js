@@ -4,12 +4,13 @@ import { CONFIG } from '../config.js';
 import { esc, rich, shuffle, pct, toast } from '../ui.js';
 
 // #/pruefen · #/pruefen/block/<id>
-const cfg = { mode: 'training', n: 10, faecher: null };
+const cfg = { mode: 'training', n: 10, faecher: null, art: 'alle' };
 
 export function render(view, [kind, arg]) {
   if (kind === 'block') return run(view, { mode: 'training', pool: weighted(questionsFor({ block: arg })), title: `${arg} ${blockById(arg)?.titel || ''}` });
   cfg.faecher ||= [...progress.settings.faecher];
-  const pool = questionsFor({ faecher: cfg.faecher });
+  const ARTEN = { alle: 'Alle', fall: 'Nur Fälle', rechnen: 'Nur Rechnen' };
+  const pool = questionsFor({ faecher: cfg.faecher }).filter((q) => cfg.art === 'alle' || (cfg.art === 'fall' ? q.fall : q.typ === 'rechnen'));
   view.innerHTML = `
     <div class="head"><div><h1>Wissen prüfen</h1><div class="sub">${pool.length} Fragen in der Auswahl</div></div></div>
     <div class="mode-pick" role="group" aria-label="Modus">
@@ -18,6 +19,8 @@ export function render(view, [kind, arg]) {
     </div>
     <h2>Fächer</h2>
     <div class="chips">${CONFIG.faecher.map((f) => `<button class="chip" data-f="${f.id}" aria-pressed="${cfg.faecher.includes(f.id)}">${f.id}</button>`).join('')}</div>
+    <h2>Fragenart</h2>
+    <div class="chips">${Object.entries(ARTEN).map(([k, t]) => `<button class="chip" data-art="${k}" aria-pressed="${cfg.art === k}">${t}</button>`).join('')}</div>
     <h2>Anzahl Fragen</h2>
     <div class="chips">${[5, 10, 20, 30].map((n) => `<button class="chip" data-n="${n}" aria-pressed="${cfg.n === n}">${n}</button>`).join('')}</div>
     ${cfg.mode === 'klausur' ? '<p class="small muted">Zeit: eine Minute je Punkt (Fragen zählen 1 bis 3 Punkte nach Schwierigkeit). Fälle zählen als Ganzes.</p>' : ''}
@@ -25,6 +28,7 @@ export function render(view, [kind, arg]) {
     ${history()}`;
   view.querySelectorAll('[data-mode]').forEach((b) => b.onclick = () => { cfg.mode = b.dataset.mode; render(view, []); });
   view.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { const f = b.dataset.f; cfg.faecher = cfg.faecher.includes(f) ? cfg.faecher.filter((x) => x !== f) : [...cfg.faecher, f]; render(view, []); });
+  view.querySelectorAll('[data-art]').forEach((b) => b.onclick = () => { cfg.art = b.dataset.art; render(view, []); });
   view.querySelectorAll('[data-n]').forEach((b) => b.onclick = () => { cfg.n = Number(b.dataset.n); render(view, []); });
   view.querySelector('#go').onclick = () => run(view, { mode: cfg.mode, pool: weighted(pool, cfg.n), title: cfg.mode === 'klausur' ? 'Klausurmodus' : 'Training' });
 }

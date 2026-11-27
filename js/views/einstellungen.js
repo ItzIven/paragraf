@@ -44,7 +44,7 @@ export function render(view) {
     <div class="panel stack small">
       ${packs.map(([f, i]) => `<div class="row"><b>${f}</b><span class="muted">Version ${esc(String(i.version))}, ${i.origin === 'online' ? 'online geladen' : i.origin === 'datei' ? 'aus Datei' : 'mitgeliefert'}</span>${i.demo ? '<span class="demo-note">Demo</span>' : ''}</div>`).join('') || '<span class="muted">Keine Inhalte geladen.</span>'}
       <div class="row"><span class="muted">${db.cards.length} Karten, ${db.questions.length} Fragen, ${db.schemas.length} Schemata, ${db.blocks.length} Lernblöcke</span></div>
-      <div class="btn-row">${p.session ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdatei laden</label><input type="file" id="cimp" accept="application/json,.json" hidden></div>
+      <div class="btn-row">${p.session ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdateien laden</label><input type="file" id="cimp" accept="application/json,.json" multiple hidden></div>
       <p class="muted" style="margin:0">Inhalte sind Lernhilfen und ersetzen nicht Gesetz, Richtlinien und die amtlichen Handbücher. Fehler bitte notieren und melden.</p>
     </div>
     <p class="small muted" style="margin-top:24px">${CONFIG.appName} ${CONFIG.version}</p>`;
@@ -80,6 +80,11 @@ export function render(view) {
   }));
   $('#syncnow')?.addEventListener('click', async () => { await sync(); toast(syncState.status === 'ok' ? 'Abgeglichen' : `Sync: ${syncState.error || syncState.status}`); render(view); });
   $('#unsync')?.addEventListener('click', () => { disconnectSync(); render(view); });
-  $('#cimp').onchange = async (e) => { try { const pk = importContent(await e.target.files[0].text()); toast(`${pk.fach}: ${(pk.cards || []).length} Karten, ${(pk.questions || []).length} Fragen geladen`); render(view); } catch (err) { toast(err.message); } };
+  $('#cimp').onchange = async (e) => {
+    const ok = [], bad = [];
+    for (const f of e.target.files) { try { ok.push(importContent(await f.text()).fach); } catch { bad.push(f.name); } }
+    toast(`${ok.length ? `Geladen: ${ok.join(', ')}` : ''}${bad.length ? `${ok.length ? ' · ' : ''}Nicht lesbar: ${bad.join(', ')}` : ''}`);
+    render(view);
+  };
   $('#reload')?.addEventListener('click', async () => { toast((await refreshRemote()) ? 'Inhalte aktualisiert' : 'Keine Online-Inhalte gefunden'); render(view); });
 }
