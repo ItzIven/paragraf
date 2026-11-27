@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 27.11.2026, Version 0.3.3. Gesamt: **48 %** (gewichtet).
+Stand: 27.11.2026, Version 0.3.4. Gesamt: **52 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
@@ -11,7 +11,7 @@ Stand: 27.11.2026, Version 0.3.3. Gesamt: **48 %** (gewichtet).
 | Inhalte AO | 15 % | 45 % | 52 Karten, 33 Fragen (2 Fälle), 8 Schemata, Normen geprüft. Offen: AO-01, AO-10, AO-14, mehr Fälle |
 | Inhalte USt | 12 % | 25 % | 36 Karten, 14 Fragen (1 Fall), 5 Schemata. Offen: Ausfuhr/Einfuhr, Rechnung, § 17, GiG-Fälle, mehr Fälle |
 | Inhalte ESt | 12 % | 20 % | 28 Karten, 13 Fragen (1 Fall), 4 Schemata. Offen: § 19/LSt, V+V-AfA-Fälle, EÜR, § 16, Sonderausgaben, mehr Fälle |
-| Inhalte BilR | 8 % | 0 % | |
-| Inhalte BdG | 8 % | 0 % | |
+| Inhalte BilR | 8 % | 25 % | 26 Karten, 12 Fragen (1 Fall Mehr-/Weniger-Rechnung), 4 Schemata. Offen: Vorräte, § 6b-Fälle, Leasing, mehr Fälle |
+| Inhalte BdG | 8 % | 25 % | 22 Karten, 12 Fragen (1 Fall Sonderbereich), 4 Schemata. Offen: § 6 Abs. 5/§ 24 UmwStG-Fälle, GmbH & Co. KG, Einlagekonto-Rechnung |
 
 Berechnung: Summe aus Gewicht × Stand. Zielgröße je Fach etwa 150 Karten, 80 Fragen und 10–15 Schemata.

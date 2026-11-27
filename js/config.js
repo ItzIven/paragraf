@@ -3,7 +3,7 @@
 // darf öffentlich sein; geschützt wird über Login + Row Level Security.
 export const CONFIG = {
   appName: 'Paragraf',
-  version: '0.3.3',
+  version: '0.3.4',
   supabaseUrl: '',      // z. B. 'https://abcdefgh.supabase.co'
   supabaseAnonKey: '',  // langer Schlüssel "anon public"
   faecher: [

@@ -8,7 +8,12 @@ const cfg = { mode: 'training', n: 10, faecher: null, art: 'alle' };
 
 export function render(view, [kind, arg]) {
   if (kind === 'runde') return runde(view, Number(arg));
-  if (kind === 'block') return run(view, { mode: 'training', pool: weighted(questionsFor({ block: arg })), title: `${arg} ${blockById(arg)?.titel || ''}` });
+  if (kind === 'block') {
+    // Fälle immer vollständig: Schritte aus anderen Blöcken mitnehmen
+    const own = questionsFor({ block: arg }); const falls = new Set(own.map((q) => q.fall).filter(Boolean));
+    const pool = [...own, ...db.questions.filter((q) => q.fall && falls.has(q.fall) && !own.includes(q))];
+    return run(view, { mode: 'training', pool: weighted(pool), title: `${arg} ${blockById(arg)?.titel || ''}` });
+  }
   cfg.faecher ||= [...progress.settings.faecher];
   const ARTEN = { alle: 'Alle', fall: 'Nur Fälle', rechnen: 'Nur Rechnen' };
   const pool = questionsFor({ faecher: cfg.faecher }).filter((q) => cfg.art === 'alle' || (cfg.art === 'fall' ? q.fall : q.typ === 'rechnen'));
@@ -131,7 +136,7 @@ function run(view, { mode, pool, title }) {
       <div class="session-top"><a class="btn btn--ghost" href="#/pruefen" aria-label="Abbrechen">✕</a><div class="bar"><i style="width:${(i / qs.length) * 100}%"></i></div><span class="small muted">${i + 1}/${qs.length}</span>${end ? '<span class="timer" id="timer"></span>' : ''}</div>
       <div class="flash">
         <div class="ruled"><div class="margin">${esc(q.block || q.fach)}<br><span class="muted">${'●'.repeat(pts(q))}</span></div><div class="body">
-          ${q.fall ? (() => { const steps = qs.filter((x) => x.fall === q.fall); const first = steps[0]; const k = steps.indexOf(q) + 1;
+          ${q.fall ? (() => { const steps = db.questions.filter((x) => x.fall === q.fall).sort((a, b) => a.schritt - b.schritt); const first = steps[0]; const k = q.schritt || steps.findIndex((x) => x.id === q.id) + 1;
             return `<div class="fall-tag">Fall · Schritt ${k} von ${steps.length}</div>${first.fallSachverhalt ? `<details class="fall-sv" ${k === 1 ? 'open' : ''}><summary>Sachverhalt</summary><div class="small">${rich(first.fallSachverhalt)}</div></details>` : ''}`; })() : ''}
           ${q.sachverhalt ? `<div class="small" style="margin-bottom:8px">${rich(q.sachverhalt)}</div>` : ''}
           <div class="q">${rich(q.frage)}</div>

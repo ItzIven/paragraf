@@ -70,3 +70,4 @@ Obsidian-Vault „Studium“ (Pfad in `CLAUDE.local.md`):
 
 - `inhalte/est.json`: 28 Karten, 13 Fragen, 4 Schemata (VZ 2026: Grundfreibetrag 12.348 €, Entfernungspauschale 0,38 € ab km 1, § 33a 12.348 €, Besteuerungsanteil 2026 84 %, § 23 Freigrenze < 1.000 €, § 9 Nr. 1 S. 1 GewStG ab EZ 2025: Kürzung um die als Betriebsausgabe erfasste Grundsteuer (NICHT 0,11 % des Grundsteuerwerts – Entwurfsfassung)).
 - Deployment: Repo-Klon unter /home/claude/paragraf; Inhalte (`inhalte/`) nie committen.
+- `inhalte/bilr.json` (26/12/4) und `inhalte/bdg.json` (22/12/4): geprüft degressive AfA 30 % (max. 3-fach) für Anschaffungen 07/2025–12/2027, § 7g IAB 50 %/Sonder-AfA 40 %/Gewinngrenze 200.000 €, GWG 800 €/Sammelposten 250–1.000 €, KSt 15 % bis 2027.
