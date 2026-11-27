@@ -10,7 +10,7 @@ Ziel: Vorbereitung auf das Hauptstudium und die Laufbahnprüfung in AO, ESt, USt
 - **Drei Lernbereiche**:
   1. Karteikarten mit Wiederholungsplanung (SM-2, vier Bewertungen)
   2. Prüfungsschemata (Lesen oder Schritt für Schritt aus dem Kopf)
-  3. Prüfen im **Training** (sofortige Lösung) oder **Klausurmodus** (Zeitlimit 90 s/Frage, Auswertung am Ende, Ergebnis je Lernblock)
+  3. Prüfen im **Training** (sofortige Lösung) oder **Klausurmodus** (1 Minute je Punkt, Notenpunkte nach Schlüssel HS 2024, Ergebnis je Lernblock); Fälle mit mehreren Schritten
 - **Anspruchsvolle Fragen**: falsche Antwortoptionen sind typische Klausurfehler (falsche Norm, knapp falsche Frist, übersehene Ausnahme). Jede falsche Option erklärt mit `warum`, warum sie falsch ist.
 - **Inhalte geschützt**: Inhalte aus Hochschulunterlagen nie ins Repository. Sie liegen in der Supabase-Tabelle `content` und sind nur nach Login lesbar. Im Repo stehen nur `content/blocks.json` (eigener Lernplan) und selbst geschriebene Demo-Inhalte.
 
@@ -68,5 +68,5 @@ Obsidian-Vault „Studium“ (Pfad in `CLAUDE.local.md`):
 - Rechtsstand prüfen: Die amtlichen Handbücher liegen NICHT im Vault (nur Skripte/Übungen). Normen gegen gesetze-im-internet.de prüfen, Skripte über `_Text/` im Vault. Keine Corona-Sonderregeln aufnehmen (Entscheidung 27.11.2026).
 - Geänderte Rechtslage beachten: § 19 UStG ab 2025 (25.000/100.000 €, steuerfrei, Gründungsjahr 25.000 €), § 44 Abs. 3 UStDV 6.000 €, § 152 Abs. 5 S. 2 AO (25 € bei Jahreserklärungen), § 122 Abs. 2 Nr. 1 AO Vier-Tages-Fiktion ab 2025.
 
-- `inhalte/est.json`: 28 Karten, 13 Fragen, 4 Schemata (VZ 2026: Grundfreibetrag 12.348 €, Entfernungspauschale 0,38 € ab km 1, § 33a 12.348 €, Besteuerungsanteil 2026 84 %, § 23 Freigrenze < 1.000 €, § 9 Nr. 1 GewStG 0,11 % Grundsteuerwert ab EZ 2025).
+- `inhalte/est.json`: 28 Karten, 13 Fragen, 4 Schemata (VZ 2026: Grundfreibetrag 12.348 €, Entfernungspauschale 0,38 € ab km 1, § 33a 12.348 €, Besteuerungsanteil 2026 84 %, § 23 Freigrenze < 1.000 €, § 9 Nr. 1 S. 1 GewStG ab EZ 2025: Kürzung um die als Betriebsausgabe erfasste Grundsteuer (NICHT 0,11 % des Grundsteuerwerts – Entwurfsfassung)).
 - Deployment: Repo-Klon unter /home/claude/paragraf; Inhalte (`inhalte/`) nie committen.
