@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 28.11.2026, Version 0.3.9. Gesamt: **66 %** (gewichtet).
+Stand: 28.11.2026, Version 0.3.9. Gesamt: **68 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
@@ -9,8 +9,8 @@ Stand: 28.11.2026, Version 0.3.9. Gesamt: **66 %** (gewichtet).
 | Sync iPhone/iPad und Login (Supabase) | 10 % | 80 % | Projekt in Frankfurt, Schema, Registrierung aus, Admin-Upload aus der App; alle 5 Fächer hochgeladen (27.11.2026); Zugangscode für Nutzer ohne Konto (28.11.2026, getestet). Offen: Test auf iPhone/iPad, weitere Konten |
 | Veröffentlichung (GitHub Pages, Home-Bildschirm) | 5 % | 80 % | Online unter itziven.github.io/paragraf; offen: Test auf iPhone/iPad |
 | Inhalte AO | 15 % | 65 % | 70 Karten, 43 Fragen (4 Fälle: Erhebung, Bekanntgabe/Wiedereinsetzung, § 173/§ 177, GF-Haftung), 8 Schemata; alle 15 AO-Blöcke belegt. Offen: mehr Fälle, Schemata AdV/Vollstreckung |
-| Inhalte USt | 12 % | 40 % | 46 Karten, 20 Fragen (2 Fälle: igL/igE, Entnahme/§ 13b), 5 Schemata; neu: Ausfuhr, Rechnung, E-Rechnung, Gastro 7 %, § 15 Abs. 1a/4, § 17, § 20. Offen: mehr Fälle |
-| Inhalte ESt | 12 % | 35 % | 38 Karten, 20 Fragen (2 Fälle: Betriebsaufspaltung, § 17), 4 Schemata; neu: Homeoffice, § 21 Abs. 2, EÜR, Kinder, Spenden, § 46, LSt-Haftung, Minijob. Offen: mehr Fälle |
+| Inhalte USt | 12 % | 45 % | 49 Karten, 22 Fragen (2 Fälle); neu: Dreiecksgeschäft, Anzahlungen, Einfuhr. Offen: weitere Fälle, Gesellschaften |
+| Inhalte ESt | 12 % | 45 % | 42 Karten, 24 Fragen (3 Fälle: Betriebsaufspaltung, § 17, § 16/§ 34); neu: Betriebsaufgabe, § 34 Abs. 3, § 10d. Offen: Internationales, weitere Fälle |
 | Inhalte BilR | 8 % | 40 % | 34 Karten, 21 Fragen (3 Fälle: Mehr-/Weniger-Rechnung, AK/degressive AfA, § 6b); Vorräte, Leasing, HK, 4 Schemata. Offen: Rückstellungen-Fall, Personengesellschaften, mehr Fälle |
 | Inhalte BdG | 8 % | 40 % | 29 Karten, 19 Fragen (3 Fälle: Sonderbereich, vGA Darlehen, Organschaft); GewSt-Rechenweg, § 8 Nr. 1, § 34a. Offen: Gesellschafterwechsel-Fall, § 15a-Fall, Einlagekonto |
 
