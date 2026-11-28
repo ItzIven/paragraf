@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 28.11.2026, Version 0.3.10. Gesamt: **73 %** (gewichtet).
+Stand: 28.11.2026, Version 0.3.10. Gesamt: **74 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
