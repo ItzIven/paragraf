@@ -134,7 +134,7 @@ function run(view, { mode, pool, title }) {
   if (mode === 'klausur') end = Date.now() + qs.reduce((s, q) => s + pts(q), 0) * 60000;
 
   // "1.234,56" und "1234.56" werden beide erkannt
-  const num = (v) => { let t = String(v).replace(/[^0-9.,-]/g, ''); t = t.includes(',') ? t.replace(/\./g, '').replace(',', '.') : /^\d{1,3}(\.\d{3})+$/.test(t) ? t.replace(/\./g, '') : t; return Number(t); };
+  const num = (v) => { let t = String(v).replace(/[^0-9.,-]/g, ''); t = t.includes(',') ? t.replace(/\./g, '').replace(',', '.') : /^-?\d{1,3}(\.\d{3})+$/.test(t) ? t.replace(/\./g, '') : t; return Number(t); };
   const isRight = (q, set) => q.typ === 'rechnen'
     ? typed.trim() !== '' && Math.abs(num(typed) - q.loesung) <= (q.toleranz ?? 0)
     : q.order.every((o) => !!o.richtig === set.has(o.i));
@@ -152,7 +152,7 @@ function run(view, { mode, pool, title }) {
           <div class="q">${rich(q.frage)}</div>
           <div class="small muted">${calc ? `Ergebnis eingeben${q.einheit ? ' in ' + esc(q.einheit) : ''}.` : multi ? 'Mehrere Antworten können richtig sein.' : 'Eine Antwort ist richtig.'}</div>
         </div></div>
-        ${calc ? `<div class="calc"><input id="calc" inputmode="decimal" autocomplete="off" placeholder="z. B. 111,50" value="${esc(typed)}" ${checked ? 'disabled' : ''} aria-label="Ergebnis">${q.einheit ? `<span>${esc(q.einheit)}</span>` : ''}</div>${checked ? `<div class="calc-res ${isRight(q) ? 'right' : 'wrong'}">${isRight(q) ? 'Richtig' : 'Richtig wäre'}: ${fmt(q)}</div>` : ''}` : ''}
+        ${calc ? `<div class="calc"><input id="calc" inputmode="decimal" autocomplete="off" placeholder="z. B. 111,50" value="${esc(typed)}" ${checked ? 'disabled' : ''} aria-label="Ergebnis">${checked ? '' : '<button type="button" class="btn btn--ghost" id="sign" aria-label="Vorzeichen wechseln">±</button>'}${q.einheit ? `<span>${esc(q.einheit)}</span>` : ''}</div>${checked ? `<div class="calc-res ${isRight(q) ? 'right' : 'wrong'}">${isRight(q) ? 'Richtig' : 'Richtig wäre'}: ${fmt(q)}</div>` : ''}` : ''}
         <div class="opts">${q.order.map((o, k) => {
           const cls = checked ? (o.richtig ? 'right' : picked.has(o.i) ? 'wrong' : '') : '';
           return `<button class="opt ${cls}" data-i="${o.i}" aria-pressed="${picked.has(o.i)}" ${checked ? 'disabled' : ''}><span class="k">${'ABCDEF'[k]}</span><span>${esc(o.text)}</span>${checked && o.warum ? `<span class="why">${esc(o.warum)}</span>` : ''}</button>`; }).join('')}</div>
@@ -169,6 +169,7 @@ function run(view, { mode, pool, title }) {
       inp.oninput = () => { typed = inp.value; view.querySelector('#next').disabled = !typed.trim(); };
       inp.onkeydown = (e) => { if (e.key === 'Enter' && typed.trim()) next(); };
       inp.focus();
+      view.querySelector('#sign').onclick = () => { inp.value = inp.value.trim().startsWith('-') ? inp.value.trim().slice(1) : '-' + inp.value.trim(); inp.oninput(); inp.focus(); };
     }
     view.querySelector('#next').onclick = next;
     tick();
