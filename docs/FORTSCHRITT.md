@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 28.11.2026, Version 0.3.9. Gesamt: **65 %** (gewichtet).
+Stand: 28.11.2026, Version 0.3.9. Gesamt: **66 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
@@ -12,6 +12,6 @@ Stand: 28.11.2026, Version 0.3.9. Gesamt: **65 %** (gewichtet).
 | Inhalte USt | 12 % | 40 % | 46 Karten, 20 Fragen (2 Fälle: igL/igE, Entnahme/§ 13b), 5 Schemata; neu: Ausfuhr, Rechnung, E-Rechnung, Gastro 7 %, § 15 Abs. 1a/4, § 17, § 20. Offen: mehr Fälle |
 | Inhalte ESt | 12 % | 35 % | 38 Karten, 20 Fragen (2 Fälle: Betriebsaufspaltung, § 17), 4 Schemata; neu: Homeoffice, § 21 Abs. 2, EÜR, Kinder, Spenden, § 46, LSt-Haftung, Minijob. Offen: mehr Fälle |
 | Inhalte BilR | 8 % | 40 % | 34 Karten, 21 Fragen (3 Fälle: Mehr-/Weniger-Rechnung, AK/degressive AfA, § 6b); Vorräte, Leasing, HK, 4 Schemata. Offen: Rückstellungen-Fall, Personengesellschaften, mehr Fälle |
-| Inhalte BdG | 8 % | 30 % | 22 Karten, 15 Fragen (2 Fälle: Sonderbereich, vGA Darlehen), 4 Schemata. Offen: § 6 Abs. 5/§ 24 UmwStG-Fälle, GmbH & Co. KG, Einlagekonto-Rechnung |
+| Inhalte BdG | 8 % | 40 % | 29 Karten, 19 Fragen (3 Fälle: Sonderbereich, vGA Darlehen, Organschaft); GewSt-Rechenweg, § 8 Nr. 1, § 34a. Offen: Gesellschafterwechsel-Fall, § 15a-Fall, Einlagekonto |
 
 Berechnung: Summe aus Gewicht × Stand. Zielgröße je Fach etwa 150 Karten, 80 Fragen und 10–15 Schemata.
