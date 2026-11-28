@@ -56,6 +56,10 @@ export async function uploadContent(session, pack) {
   }, session.access_token);
 }
 
+export async function contentByCode(code) {
+  return call('/rest/v1/rpc/inhalte_mit_code', { method: 'POST', body: JSON.stringify({ code }) });
+}
+
 export async function fetchContent(session) {
   return call('/rest/v1/content?select=fach,version,data', {}, session.access_token);
 }

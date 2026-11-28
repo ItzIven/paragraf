@@ -52,7 +52,7 @@ Obsidian-Vault „Studium“ (Pfad in `CLAUDE.local.md`):
 - `<Fach>/ILIAS/…` Skripte, Schemata, Klausuren mit Lösungen; `_Text/…` durchsuchbare Fassungen
 
 ## Nächste Schritte
-1. ~~Supabase-Projekt anlegen, `schema.sql` ausführen, `js/config.js` füllen~~ erledigt 27.11.2026: Projekt `paragraf` (Frankfurt, Free), Registrierung aus. Inhalte lädt ein Admin-Konto (Tabelle `admins`) in den Einstellungen hoch; kein service_role-Schlüssel nötig.
+1. ~~Supabase-Projekt anlegen, `schema.sql` ausführen, `js/config.js` füllen~~ erledigt 27.11.2026: Projekt `paragraf` (Frankfurt, Free), Registrierung aus. Inhalte lädt ein Admin-Konto (Tabelle `admins`) in den Einstellungen hoch; kein service_role-Schlüssel nötig. Zugang ohne Konto: Zugangscode (bcrypt-Hash in `private.zugang`, Prüfung in `public.inhalte_mit_code`), einmal je Gerät in den Einstellungen; Code ändern sperrt alte Geräte aus.
 2. ~~GitHub-Repository anlegen, Pages aktivieren~~ erledigt: github.com/ItzIven/paragraf, https://itziven.github.io/paragraf/ (Branch `main`, `/`).
 3. Inhalte Fach für Fach erstellen (Start: AO Stufe 1 und Hauptstudiums-Blöcke AO-11 bis AO-15), validieren, hochladen.
 4. Ausbau: Falltrainer (mehrstufige Fälle), Fristenrechner-Training, Lernplan mit Prüfungsterminen.

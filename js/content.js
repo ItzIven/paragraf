@@ -7,7 +7,8 @@ import * as sb from './supabase.js';
 
 export const db = { blocks: [], cards: [], questions: [], schemas: [], packs: {} };
 const CACHE = 'paragraf.content';
-const LOCAL = 'paragraf.content.local'; // per Datei importierte Inhalte (ohne Supabase)
+const LOCAL = 'paragraf.content.local';
+const CODE = 'paragraf.zugang'; // Zugangscode dieses Geräts (Inhalte ohne eigenes Konto) // per Datei importierte Inhalte (ohne Supabase)
 
 function ingest(pack, origin) {
   const f = pack.fach;
@@ -52,9 +53,46 @@ export async function uploadLocal() {
   return done;
 }
 
+export const hasCode = () => !!localStorage.getItem(CODE);
+
+function storeRows(rows) {
+  const packs = rows.map((r) => ({ ...r.data, fach: r.fach, version: r.version }));
+  localStorage.setItem(CACHE, JSON.stringify(packs));
+  packs.forEach((pk) => ingest(pk, 'online'));
+}
+
+// Inhalte mit Zugangscode freischalten (gilt für alle Profile auf diesem Gerät)
+export async function unlockWithCode(code) {
+  storeRows(await sb.contentByCode(code.trim()));
+  localStorage.setItem(CODE, code.trim());
+}
+
+// Zugangscode entfernen; mitgeladene Online-Inhalte verschwinden, solange niemand angemeldet ist
+export function forgetCode() {
+  localStorage.removeItem(CODE);
+  if (!activeProfile()?.session) dropOnline();
+}
+
+function dropOnline() {
+  localStorage.removeItem(CACHE);
+  for (const f of Object.keys(db.packs)) if (db.packs[f].origin === 'online') {
+    delete db.packs[f];
+    for (const k of ['cards', 'questions', 'schemas']) db[k] = db[k].filter((x) => x.fach !== f);
+  }
+}
+
 export async function refreshRemote() {
   const p = activeProfile();
-  if (!hasSync() || !p?.session || !navigator.onLine) return false;
+  if (!hasSync() || !navigator.onLine) return false;
+  if (!p?.session) {
+    const code = localStorage.getItem(CODE);
+    if (!code) return false;
+    try { storeRows(await sb.contentByCode(code)); return true; }
+    catch (e) {
+      if (/Zugangscode/.test(e.message)) { localStorage.removeItem(CODE); dropOnline(); await loadContent(); }
+      return false;
+    }
+  }
   try {
     const rows = await sb.fetchContent(p.session);
     const packs = rows.map((r) => ({ ...r.data, fach: r.fach, version: r.version }));
@@ -70,10 +108,10 @@ export function loginHint() {
   const fehlt = CONFIG.faecher.filter((f) => !db.packs[f.id] || db.packs[f.id].demo || db.packs[f.id].origin === 'demo');
   if (!fehlt.length) return '';
   const names = fehlt.map((f) => f.id).join(', ');
-  const text = p?.session
+  const text = p?.session || hasCode()
     ? `Für ${names} sind noch keine vollständigen Inhalte geladen. Tippe in den Einstellungen auf „Inhalte neu laden“.`
-    : `Du siehst nur Demo-Inhalte. Die vollständigen Pakete für ${names} gibt es nach der Anmeldung mit deinem Sync-Konto (Admin-Rechte sind dafür nicht nötig).`;
-  return `<div class="notice"><p>${text}</p><a class="btn" href="#/einstellungen">${p?.session ? 'Zu den Einstellungen' : 'Jetzt anmelden'}</a></div>`;
+    : `Du siehst nur Demo-Inhalte. Mit dem Zugangscode schaltest du einmalig alle Fächer frei (${names}).`;
+  return `<div class="notice"><p>${text}</p><a class="btn" href="#/einstellungen/zugang">${p?.session || hasCode() ? 'Zu den Einstellungen' : 'Code eingeben'}</a></div>`;
 }
 
 export const fachName = (id) => CONFIG.faecher.find((f) => f.id === id)?.name || id;

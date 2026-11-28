@@ -1,9 +1,9 @@
 import { device, saveDevice, progress, commit, activeProfile, logout, connectSync, disconnectSync, syncState, sync, exportData, importData, removeProfile } from '../store.js';
-import { db, refreshRemote, importContent, uploadLocal, localPacks } from '../content.js';
+import { db, refreshRemote, importContent, uploadLocal, localPacks, hasCode, unlockWithCode, forgetCode } from '../content.js';
 import { CONFIG, hasSync } from '../config.js';
 import { esc, toast, sheet } from '../ui.js';
 
-export function render(view) {
+export function render(view, params = []) {
   const p = activeProfile();
   const s = progress.settings;
   const packs = Object.entries(db.packs);
@@ -40,11 +40,14 @@ export function render(view) {
       <div class="btn-row"><button class="btn" id="exp">Lernstand exportieren</button><label class="btn" for="imp">Lernstand importieren</label><input type="file" id="imp" accept="application/json" hidden></div>
     </div>
 
-    <h2>Inhalte</h2>
+    <h2 id="zugang">Inhalte</h2>
     <div class="panel stack small">
+      ${hasSync() && !p.session ? (hasCode()
+        ? '<div class="row"><span>Alle Fächer sind mit dem Zugangscode freigeschaltet.</span><button class="btn btn--ghost" id="nocode">Code entfernen</button></div>'
+        : `<form class="stack" id="codeform"><label for="code"><b>Zugangscode</b><br><span class="muted">Einmal je Gerät eingeben, dann stehen alle Fächer für alle Profile bereit, auch offline.</span></label><div class="btn-row"><input id="code" type="password" autocomplete="off" minlength="8" required placeholder="Code" style="flex:1"><button class="btn btn--primary">Freischalten</button></div></form>`) : ''}
       ${packs.map(([f, i]) => `<div class="row"><b>${f}</b><span class="muted">Version ${esc(String(i.version))}, ${i.origin === 'online' ? 'online geladen' : i.origin === 'datei' ? 'aus Datei' : 'mitgeliefert'}</span>${i.demo ? '<span class="demo-note">Demo</span>' : ''}</div>`).join('') || '<span class="muted">Keine Inhalte geladen.</span>'}
       <div class="row"><span class="muted">${db.cards.length} Karten, ${db.questions.length} Fragen, ${db.schemas.length} Schemata, ${db.blocks.length} Lernblöcke</span></div>
-      <div class="btn-row">${p.session ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdateien laden</label><input type="file" id="cimp" accept="application/json,.json" multiple hidden>${p.session && localPacks().length ? '<button class="btn" id="cup">Auf Supabase hochladen</button>' : ''}</div>
+      <div class="btn-row">${p.session || hasCode() ? '<button class="btn" id="reload">Inhalte neu laden</button>' : ''}<label class="btn" for="cimp">Inhaltsdateien laden</label><input type="file" id="cimp" accept="application/json,.json" multiple hidden>${p.session && localPacks().length ? '<button class="btn" id="cup">Auf Supabase hochladen</button>' : ''}</div>
       <p class="muted" style="margin:0">Inhalte sind Lernhilfen und ersetzen nicht Gesetz, Richtlinien und die amtlichen Handbücher. Fehler bitte notieren und melden.</p>
     </div>
     <p class="small muted" style="margin-top:24px">${CONFIG.appName} ${CONFIG.version}</p>`;
@@ -86,6 +89,13 @@ export function render(view) {
     toast(`${ok.length ? `Geladen: ${ok.join(', ')}` : ''}${bad.length ? `${ok.length ? ' · ' : ''}Nicht lesbar: ${bad.join(', ')}` : ''}`);
     render(view);
   };
+  $('#codeform')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button'); btn.disabled = true;
+    try { await unlockWithCode($('#code').value); toast('Alle Fächer freigeschaltet'); render(view); }
+    catch (err) { btn.disabled = false; toast(/Zugangscode/.test(err.message) ? 'Zugangscode falsch' : navigator.onLine ? `Fehler: ${err.message}` : 'Keine Internetverbindung'); }
+  });
+  $('#nocode')?.addEventListener('click', () => { forgetCode(); toast('Zugangscode entfernt'); render(view); });
   $('#cup')?.addEventListener('click', async (e) => {
     e.target.disabled = true;
     try { const f = await uploadLocal(); toast(`Hochgeladen: ${f.join(', ')}`); }
@@ -93,4 +103,5 @@ export function render(view) {
     render(view);
   });
   $('#reload')?.addEventListener('click', async () => { toast((await refreshRemote()) ? 'Inhalte aktualisiert' : 'Keine Online-Inhalte gefunden'); render(view); });
+  if (params[0] === 'zugang') $('#zugang')?.scrollIntoView({ block: 'start' });
 }
