@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 28.11.2026, Version 0.3.9. Gesamt: **71 %** (gewichtet).
+Stand: 28.11.2026, Version 0.3.9. Gesamt: **72 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
@@ -9,9 +9,9 @@ Stand: 28.11.2026, Version 0.3.9. Gesamt: **71 %** (gewichtet).
 | Sync iPhone/iPad und Login (Supabase) | 10 % | 80 % | Projekt in Frankfurt, Schema, Registrierung aus, Admin-Upload aus der App; alle 5 Fächer hochgeladen (27.11.2026); Zugangscode für Nutzer ohne Konto (28.11.2026, getestet). Offen: Test auf iPhone/iPad, weitere Konten |
 | Veröffentlichung (GitHub Pages, Home-Bildschirm) | 5 % | 80 % | Online unter itziven.github.io/paragraf; offen: Test auf iPhone/iPad |
 | Inhalte AO | 15 % | 72 % | 78 Karten, 47 Fragen (5 Fälle: Erhebung, Bekanntgabe/Wiedereinsetzung, § 173/§ 177, GF-Haftung, Stundung/Aufrechnung); neu: § 165, § 174, § 357, Untätigkeitseinspruch, FGO-Klage, Stundung, Erlass, Aufrechnung |
-| Inhalte USt | 12 % | 50 % | 51 Karten, 25 Fragen (3 Fälle: ig Erwerb, Entnahme/§ 13b, Option/§ 15a); Dreiecksgeschäft, Anzahlungen, Einfuhr. Offen: weitere Fälle, Gesellschaften |
+| Inhalte USt | 12 % | 55 % | 51 Karten, 28 Fragen (4 Fälle: ig Erwerb, Entnahme/§ 13b, Option/§ 15a, Reihengeschäft); Dreiecksgeschäft, Anzahlungen, Einfuhr. Offen: weitere Fälle, Gesellschaften |
 | Inhalte ESt | 12 % | 50 % | 45 Karten, 25 Fragen (3 Fälle); neu: Betriebsaufgabe, § 34 Abs. 3, § 10d, Steuerpflicht § 1, § 9 AO, DBA/Progressionsvorbehalt. Offen: weitere Fälle |
 | Inhalte BilR | 8 % | 45 % | 34 Karten, 24 Fragen (4 Fälle: Mehr-/Weniger-Rechnung, AK/AfA, § 6b, Rückstellungen); Vorräte, Leasing, HK. Offen: Personengesellschaften in der Bilanz, mehr Fälle |
-| Inhalte BdG | 8 % | 45 % | 29 Karten, 22 Fragen (4 Fälle: Sonderbereich, vGA, Organschaft, § 15a); GewSt, § 34a. Offen: Gesellschafterwechsel-Fall, Einlagekonto |
+| Inhalte BdG | 8 % | 50 % | 29 Karten, 25 Fragen (5 Fälle: Sonderbereich, vGA, Organschaft, § 15a, Gesellschafterwechsel/Ergänzungsbilanz); GewSt, § 34a. Offen: Einlagekonto |
 
 Berechnung: Summe aus Gewicht × Stand. Zielgröße je Fach etwa 150 Karten, 80 Fragen und 10–15 Schemata.
