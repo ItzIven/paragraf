@@ -1,6 +1,6 @@
 # Fortschritt „Paragraf“
 
-Stand: 28.11.2026, Version 0.3.10. Gesamt: **74 %** (gewichtet).
+Stand: 28.11.2026, Version 0.3.10. Gesamt: **75 %** (gewichtet).
 
 | Bereich | Gewicht | Stand | Offen |
 |---|---:|---:|---|
@@ -11,7 +11,7 @@ Stand: 28.11.2026, Version 0.3.10. Gesamt: **74 %** (gewichtet).
 | Inhalte AO | 15 % | 72 % | 78 Karten, 47 Fragen (5 Fälle: Erhebung, Bekanntgabe/Wiedereinsetzung, § 173/§ 177, GF-Haftung, Stundung/Aufrechnung); neu: § 165, § 174, § 357, Untätigkeitseinspruch, FGO-Klage, Stundung, Erlass, Aufrechnung |
 | Inhalte USt | 12 % | 55 % | 51 Karten, 28 Fragen (4 Fälle: ig Erwerb, Entnahme/§ 13b, Option/§ 15a, Reihengeschäft); Dreiecksgeschäft, Anzahlungen, Einfuhr. Offen: weitere Fälle, Gesellschaften |
 | Inhalte ESt | 12 % | 55 % | 45 Karten, 28 Fragen (4 Fälle: Betriebsaufspaltung, § 17, § 16/§ 34, Vermietung/anschaffungsnahe HK); neu: Betriebsaufgabe, § 34 Abs. 3, § 10d, Steuerpflicht § 1, § 9 AO, DBA/Progressionsvorbehalt. Offen: weitere Fälle |
-| Inhalte BilR | 8 % | 50 % | 34 Karten, 27 Fragen (5 Fälle: Mehr-/Weniger-Rechnung, AK/AfA, § 6b, Rückstellungen, Entnahme/Einlage); Vorräte, Leasing, HK. Offen: Personengesellschaften in der Bilanz, mehr Fälle |
-| Inhalte BdG | 8 % | 50 % | 29 Karten, 25 Fragen (5 Fälle: Sonderbereich, vGA, Organschaft, § 15a, Gesellschafterwechsel/Ergänzungsbilanz); GewSt, § 34a. Offen: Einlagekonto |
+| Inhalte BilR | 8 % | 55 % | 38 Karten, 28 Fragen (5 Fälle: Mehr-/Weniger-Rechnung, AK/AfA, § 6b, Rückstellungen, Entnahme/Einlage); Vorräte, Leasing, HK. Offen: Personengesellschaften in der Bilanz, mehr Fälle |
+| Inhalte BdG | 8 % | 55 % | 33 Karten, 26 Fragen (5 Fälle: Sonderbereich, vGA, Organschaft, § 15a, Gesellschafterwechsel/Ergänzungsbilanz); GewSt, § 34a. Offen: Einlagekonto |
 
 Berechnung: Summe aus Gewicht × Stand. Zielgröße je Fach etwa 150 Karten, 80 Fragen und 10–15 Schemata.
