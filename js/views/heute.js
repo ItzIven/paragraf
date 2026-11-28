@@ -1,5 +1,5 @@
 import { progress, activeProfile, today, syncState } from '../store.js';
-import { db, fachName } from '../content.js';
+import { db, fachName, loginHint } from '../content.js';
 import { buildQueue } from '../srs.js';
 import { esc, pct } from '../ui.js';
 import { CONFIG } from '../config.js';
@@ -27,6 +27,7 @@ export function render(view) {
 
   view.innerHTML = `
     <div class="head"><div><h1>${hello}, ${esc(p.name)}</h1><div class="sub">${new Date().toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' })}${p.session ? ` · Sync ${syncState.status}` : ''}</div></div></div>
+    ${loginHint()}
     <div class="today">
       <section class="panel due-card">
         <h2 style="margin:0">Heute fällig</h2>

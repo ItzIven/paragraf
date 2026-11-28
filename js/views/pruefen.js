@@ -1,5 +1,5 @@
 import { progress, commit } from '../store.js';
-import { db, questionsFor, blockById, fachName } from '../content.js';
+import { db, questionsFor, blockById, fachName, loginHint } from '../content.js';
 import { CONFIG } from '../config.js';
 import { esc, rich, shuffle, pct, toast } from '../ui.js';
 import { blockTable, pill, trendText } from '../stats.js';
@@ -20,6 +20,7 @@ export function render(view, [kind, arg]) {
   const pool = questionsFor({ faecher: cfg.faecher }).filter((q) => cfg.art === 'alle' || (cfg.art === 'fall' ? q.fall : q.typ === 'rechnen'));
   view.innerHTML = `
     <div class="head"><div><h1>Wissen prüfen</h1><div class="sub">${pool.length} Fragen in der Auswahl</div></div></div>
+    ${loginHint()}
     <div class="mode-pick" role="group" aria-label="Modus">
       <button data-mode="training" aria-pressed="${cfg.mode === 'training'}"><h3>Training</h3><span class="small muted">Nach jeder Frage siehst du die Lösung mit Norm und Begründung.</span></button>
       <button data-mode="klausur" aria-pressed="${cfg.mode === 'klausur'}"><h3>Klausurmodus</h3><span class="small muted">Mit Zeitlimit, Punkten und Notenpunkten, Auswertung erst am Ende.</span></button>

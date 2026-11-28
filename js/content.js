@@ -64,6 +64,18 @@ export async function refreshRemote() {
   } catch { return false; }
 }
 
+// Hinweis, wenn Fächer nur als Demo oder gar nicht vorliegen (geschützte Inhalte gibt es nur nach Anmeldung)
+export function loginHint() {
+  const p = activeProfile();
+  const fehlt = CONFIG.faecher.filter((f) => !db.packs[f.id] || db.packs[f.id].demo || db.packs[f.id].origin === 'demo');
+  if (!fehlt.length) return '';
+  const names = fehlt.map((f) => f.id).join(', ');
+  const text = p?.session
+    ? `Für ${names} sind noch keine vollständigen Inhalte geladen. Tippe in den Einstellungen auf „Inhalte neu laden“.`
+    : `Du siehst nur Demo-Inhalte. Die vollständigen Pakete für ${names} gibt es nach der Anmeldung mit deinem Sync-Konto (Admin-Rechte sind dafür nicht nötig).`;
+  return `<div class="notice"><p>${text}</p><a class="btn" href="#/einstellungen">${p?.session ? 'Zu den Einstellungen' : 'Jetzt anmelden'}</a></div>`;
+}
+
 export const fachName = (id) => CONFIG.faecher.find((f) => f.id === id)?.name || id;
 export const blockById = (id) => db.blocks.find((b) => b.id === id);
 export const cardsFor = ({ fach, block } = {}) => db.cards.filter((c) => (!fach || c.fach === fach) && (!block || c.block === block));

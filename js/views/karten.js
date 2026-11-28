@@ -1,5 +1,5 @@
 import { progress } from '../store.js';
-import { db, cardsFor, fachName, blockById } from '../content.js';
+import { db, cardsFor, fachName, blockById, loginHint } from '../content.js';
 import { buildQueue, schedule, label, isNew, isDue } from '../srs.js';
 import { CONFIG } from '../config.js';
 import { esc, rich, shuffle } from '../ui.js';
@@ -22,6 +22,7 @@ function pick(view) {
   const due = buildQueue(all).length;
   view.innerHTML = `
     <div class="head"><div><h1>Karteikarten</h1><div class="sub">${all.length} Karten in deinen Fächern</div></div></div>
+    ${loginHint()}
     <a class="panel row" href="#/karten/faellig" style="text-decoration:none;color:inherit"><div><h3>Heute fällig</h3><span class="small muted">Wiederholungen zuerst, dann neue Karten bis zu deinem Tageslimit</span></div><span class="spacer"></span><span class="result-big" style="font-size:2rem">${due}</span></a>
     <h2>Nach Fach</h2>
     <div class="register">${CONFIG.faecher.map((f) => { const n = cardsFor({ fach: f.id }).length; const nd = cardsFor({ fach: f.id }).filter((c) => isDue(c.id)).length;

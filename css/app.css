@@ -302,3 +302,8 @@ textarea.input { padding: 10px 12px; min-height: 120px; resize: vertical; }
 .pill--ok { background: color-mix(in srgb, var(--ok) 22%, transparent); color: var(--ok); }
 .pill--mid { background: color-mix(in srgb, var(--mid) 22%, transparent); color: var(--mid); }
 .pill--bad { background: color-mix(in srgb, var(--bad) 22%, transparent); color: var(--bad); }
+
+/* Hinweis: nur Demo-Inhalte geladen */
+.notice { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin: 0 0 18px; padding: 12px 14px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.notice p { margin: 0; flex: 1 1 220px; font-size: .92em; }
+.notice .btn { flex: 0 0 auto; }
